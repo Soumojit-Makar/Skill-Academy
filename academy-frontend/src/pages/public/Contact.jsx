@@ -1,4 +1,4 @@
-import EnquiryForm from '../../components/forms/EnquiryForm'
+import EnquiryForm from "../../components/forms/EnquiryForm";
 
 export default function Contact() {
   return (
@@ -9,7 +9,9 @@ export default function Contact() {
       </div>
       <div className="max-w-5xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Send an Enquiry</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Send an Enquiry
+          </h2>
           <div className="bg-white rounded-xl border border-gray-100 p-7 shadow-sm">
             <EnquiryForm source="contact" />
           </div>
@@ -17,12 +19,21 @@ export default function Contact() {
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-gray-900">Get in Touch</h2>
           {[
-            { icon: '📞', label: 'Phone', value: '+91 98765 43210' },
-            { icon: '✉️', label: 'Email', value: 'hello@academy.com' },
-            { icon: '📍', label: 'Address', value: '123 Tech Park, Your City — 500001' },
-            { icon: '⏰', label: 'Hours', value: 'Mon–Sat: 9 AM – 7 PM' },
-          ].map(i => (
-            <div key={i.label} className="flex gap-4 p-4 bg-white rounded-xl border border-gray-100">
+            { icon: "📞", label: "Phone", value: "9830640814 | 7908735132" },
+            { icon: "✉️", label: "Email", value: "digitalindian.skillacademy@gmail.com" },
+            {
+              icon: "📍",
+              label: "Address",
+              value: `Digital Indian EN-9, Sector V,
+                      Salt Lake Kolkata,
+                      West Bengal India - 700091`,
+            },
+            { icon: "⏰", label: "Hours", value: "Mon–Sun: 9 AM – 7 PM" },
+          ].map((i) => (
+            <div
+              key={i.label}
+              className="flex gap-4 p-4 bg-white rounded-xl border border-gray-100"
+            >
               <span className="text-2xl">{i.icon}</span>
               <div>
                 <p className="text-xs text-gray-400 font-medium">{i.label}</p>
@@ -33,5 +44,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-
+import LOGO from '../../assates/logo.png'
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
         <div>
           <p className="font-bold text-white text-lg mb-3">
-            🎓 DigitalIndian Skillacademy
+            <img src={LOGO} alt="Logo" className="h-8 inline-block mr-2" />
+            DigitalIndian Skillacademy
           </p>
           <p className="text-sm leading-relaxed text-slate-400">
             Career-focused IT & professional training with placement support.
@@ -57,8 +58,8 @@ export default function Footer() {
           </p>
           <p className="text-sm text-slate-400">
             📍 Digital Indian EN-9, Sector V,
-            <br /> Salt Lake Kolkata,
-            <br /> West Bengal India - 700091
+            <br />   Salt Lake Kolkata,
+            <br />   West Bengal India - 700091
           </p>
           <div className="flex gap-3 mt-4">
             {["Facebook", "Instagram", "LinkedIn", "YouTube"].map((s) => (

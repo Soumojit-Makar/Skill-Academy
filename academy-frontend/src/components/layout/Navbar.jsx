@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-
+import LOGO from '../../assates/logo.png'
 const LINKS = [
   { to: '/',           label: 'Home' },
   { to: '/courses',    label: 'Courses' },
@@ -17,10 +17,11 @@ export default function Navbar() {
   const dark = pathname === '/'
 
   return (
-    <nav className={`sticky top-0 z-50 border-b ${dark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-100'}`}>
+    <nav className={`sticky top-0 z-50 border-b ${ 'bg-white border-gray-100'}`}>
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className={`font-bold text-xl ${dark ? 'text-white' : 'text-gray-900'}`}>
-          🎓 <span className="text-blue-500">DigitalIndian Skillacademy</span>
+            <img src={LOGO} alt="Logo" className="h-8 inline-block mr-2" />
+           <span className="text-blue-500">DigitalIndian Skillacademy</span>
         </Link>
 
         {/* Desktop */}
@@ -31,7 +32,7 @@ export default function Navbar() {
                 `px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                   isActive
                     ? 'text-blue-500 bg-blue-50/10'
-                    : dark ? 'text-slate-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+                    :  'text-gray-600 hover:text-gray-900'
                 }`
               }
             >{l.label}</NavLink>
