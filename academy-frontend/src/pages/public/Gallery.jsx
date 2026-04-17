@@ -1,3 +1,4 @@
+import PageLoader from '../../components/ui/PageLoader'
 import { useState, useEffect } from 'react'
 import api from '../../api/axios'
 
@@ -9,6 +10,8 @@ export default function Gallery() {
   useEffect(() => {
     api.get('/gallery').then(r => setItems(r.data)).catch(() => {}).finally(() => setLoading(false))
   }, [])
+
+  if (loading) return <PageLoader message="Loading gallery…" />
 
   return (
     <div className="min-h-screen bg-gray-50">

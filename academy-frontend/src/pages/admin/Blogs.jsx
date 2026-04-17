@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import api from '../../api/axios'
+import PageLoader from '../../components/ui/PageLoader'
 
 const EMPTY = { title: '', excerpt: '', content: '', thumbnail: '', tags: '', status: 'draft' }
 
 export default function AdminBlogs() {
-  const [blogs,   setBlogs]   = useState([])
-  const [loading, setLoading] = useState(true)
+  const [blogs,       setBlogs]       = useState([])
+  const [loading,     setLoading]     = useState(true)
+  const [initialLoad, setInitialLoad] = useState(true)
   const [modal,   setModal]   = useState(false)
   const [editing, setEditing] = useState(null)
   const [form,    setForm]    = useState(EMPTY)
@@ -14,9 +16,11 @@ export default function AdminBlogs() {
 
   const load = () => {
     setLoading(true)
-    api.get('/admin/blogs').then(r => setBlogs(r.data)).catch(() => {}).finally(() => setLoading(false))
+    api.get('/admin/blogs').then(r => setBlogs(r.data)).catch(() => {}).finally(() => { setLoading(false); setInitialLoad(false) })
   }
   useEffect(load, [])
+
+  if (initialLoad && loading) return <PageLoader message="Loading blogs…" label="Admin" />
 
   const open = (b = null) => {
     setEditing(b)

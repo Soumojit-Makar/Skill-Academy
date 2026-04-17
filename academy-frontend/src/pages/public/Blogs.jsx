@@ -1,20 +1,24 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../api/axios'
+import PageLoader from '../../components/ui/PageLoader'
 
 export default function Blogs() {
   const [blogs,   setBlogs]   = useState([])
   const [loading, setLoading] = useState(true)
   const [page, setPage]       = useState(1)
   const [total, setTotal]     = useState(0)
+  const [initialLoad, setInitialLoad] = useState(true)
 
   useEffect(() => {
     setLoading(true)
     api.get(`/blogs?page=${page}&limit=9`)
       .then(r => { setBlogs(r.data); setTotal(r.total) })
       .catch(() => {})
-      .finally(() => setLoading(false))
+      .finally(() => { setLoading(false); setInitialLoad(false) })
   }, [page])
+
+  if (initialLoad && loading) return <PageLoader message="Fetching latest blog posts…" />
 
   return (
     <div className="min-h-screen bg-gray-50">

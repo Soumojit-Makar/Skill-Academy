@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../../api/axios";
 import EnquiryForm from "../../components/forms/EnquiryForm";
 import CourseCard from "../../components/sections/CourseCard";
+import PageLoader from "../../components/ui/PageLoader";
 import bannerImg from "../../assates/banner.png";
 const BENEFITS = [
   {
@@ -42,6 +43,7 @@ export default function Home() {
   const [testimonials, setTestimonials] = useState([]);
   const [faqs, setFaqs] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Promise.all([
@@ -54,8 +56,11 @@ export default function Home() {
         setTestimonials(t.data);
         setFaqs(f.data);
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setLoading(false));
   }, []);
+
+  if (loading) return <PageLoader message="Loading your courses & content…" />;
 
   return (
     <div>

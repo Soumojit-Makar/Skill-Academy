@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import api from '../../api/axios'
+import PageLoader from '../../components/ui/PageLoader'
 
 const STATUS_COLORS = {
   New: 'bg-purple-100 text-purple-700',
@@ -26,11 +27,7 @@ export default function AdminDashboard() {
       .finally(() => setLoading(false))
   }, [])
 
-  if (loading) return (
-    <div className="p-8 flex items-center justify-center min-h-64 text-gray-400 text-sm">
-      Loading dashboard…
-    </div>
-  )
+  if (loading) return <PageLoader message="Loading dashboard…" label="Admin" />
 
   if (!data) return (
     <div className="p-8 text-red-500 text-sm">Failed to load dashboard. Check API connection.</div>

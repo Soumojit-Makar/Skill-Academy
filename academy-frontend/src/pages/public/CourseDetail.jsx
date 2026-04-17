@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import api from '../../api/axios'
 import EnquiryForm from '../../components/forms/EnquiryForm'
+import PageLoader from '../../components/ui/PageLoader'
 
 export default function CourseDetail() {
   const { slug } = useParams()
@@ -17,7 +18,7 @@ export default function CourseDetail() {
       .finally(() => setLoading(false))
   }, [slug])
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-400">Loading…</div>
+  if (loading) return <PageLoader message="Loading course details…" />
   if (!course)  return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-4">
       <p className="text-2xl">😕</p>

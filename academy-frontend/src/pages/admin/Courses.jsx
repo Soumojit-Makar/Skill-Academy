@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import api from '../../api/axios'
+import PageLoader from '../../components/ui/PageLoader'
 
 const EMPTY = {
   title: '', tagline: '', description: '', duration: '', mode: 'Offline',
@@ -8,9 +9,10 @@ const EMPTY = {
 }
 
 export default function AdminCourses() {
-  const [courses,    setCourses]    = useState([])
-  const [categories, setCategories] = useState([])
-  const [loading,    setLoading]    = useState(true)
+  const [courses,     setCourses]     = useState([])
+  const [categories,  setCategories]  = useState([])
+  const [loading,     setLoading]     = useState(true)
+  const [initialLoad, setInitialLoad] = useState(true)
   const [modal,      setModal]      = useState(false)
   const [editing,    setEditing]    = useState(null)
   const [form,       setForm]       = useState(EMPTY)
@@ -26,6 +28,7 @@ export default function AdminCourses() {
     setCourses(c.data || [])
     setCategories(cats.data || [])
     setLoading(false)
+    setInitialLoad(false)
   }
   useEffect(() => { load() }, [])
 
@@ -72,6 +75,8 @@ export default function AdminCourses() {
   }
 
   const set = e => setForm(p => ({ ...p, [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
+
+  if (initialLoad && loading) return <PageLoader message="Loading courses…" label="Admin" />
 
   return (
     <div className="p-6">

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
 import api from '../../api/axios'
+import PageLoader from '../../components/ui/PageLoader'
 
 // ─── Generic CRUD table hook ────────────────────────────────────
 function useCRUD(endpoint) {
-  const [items,   setItems]   = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error,   setError]   = useState(null)
+  const [items,       setItems]       = useState([])
+  const [loading,     setLoading]     = useState(true)
+  const [initialLoad, setInitialLoad] = useState(true)
+  const [error,       setError]       = useState(null)
 
   const load = () => {
     setLoading(true)
-    api.get(endpoint).then(r => setItems(r.data)).catch(() => {}).finally(() => setLoading(false))
+    api.get(endpoint).then(r => setItems(r.data)).catch(() => {}).finally(() => { setLoading(false); setInitialLoad(false) })
   }
   useEffect(load, [endpoint])
 
@@ -17,7 +19,7 @@ function useCRUD(endpoint) {
   const update = async (id, data) => { await api.put(`${endpoint}/${id}`, data); load() }
   const remove = async (id) => { if (!confirm('Delete?')) return; await api.delete(`${endpoint}/${id}`); load() }
 
-  return { items, loading, error, load, create, update, remove }
+  return { items, loading, initialLoad, error, load, create, update, remove }
 }
 
 // ─── Simple modal helper ─────────────────────────────────────────
@@ -37,7 +39,7 @@ function Modal({ title, children, onClose }) {
 
 // ────────────────────────────────────────────────────────────────
 export function AdminCategories() {
-  const { items, loading, create, update, remove } = useCRUD('/admin/categories')
+  const { items, loading, initialLoad, create, update, remove } = useCRUD('/admin/categories')
   const [modal, setModal] = useState(false)
   const [editing, setEditing] = useState(null)
   const [form, setForm] = useState({ name: '', icon: '', isActive: true })
@@ -53,6 +55,8 @@ export function AdminCategories() {
     setModal(false)
   }
   const set = e => setForm(p => ({ ...p, [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
+
+  if (initialLoad && loading) return <PageLoader message="Loading categories…" label="Admin" />
 
   return (
     <div className="p-6">

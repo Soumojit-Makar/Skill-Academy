@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import api from '../../api/axios'
 import CourseCard from '../../components/sections/CourseCard'
+import PageLoader from '../../components/ui/PageLoader'
 
 export default function Courses() {
   const [courses,    setCourses]    = useState([])
@@ -8,6 +9,7 @@ export default function Courses() {
   const [total,      setTotal]      = useState(0)
   const [pages,      setPages]      = useState(1)
   const [loading,    setLoading]    = useState(true)
+  const [initialLoad, setInitialLoad] = useState(true)
   const [filter,     setFilter]     = useState({ search: '', category: '', level: '', page: 1 })
 
   useEffect(() => {
@@ -24,10 +26,12 @@ export default function Courses() {
     p.set('limit', 12)
     api.get(`/courses?${p}`).then(r => {
       setCourses(r.data); setTotal(r.total); setPages(r.pages)
-    }).catch(() => {}).finally(() => setLoading(false))
+    }).catch(() => {}).finally(() => { setLoading(false); setInitialLoad(false) })
   }, [filter])
 
   const setF = (key, val) => setFilter(p => ({ ...p, [key]: val, page: 1 }))
+
+  if (initialLoad && loading) return <PageLoader message="Loading all courses…" />
 
   return (
     <div className="min-h-screen bg-gray-50">

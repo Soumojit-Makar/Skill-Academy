@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import api from '../../api/axios'
+import PageLoader from '../../components/ui/PageLoader'
 
 const STATUS_OPTIONS = ['New','Contacted','Interested','Follow-up','Converted','Closed']
 const QUALITY_BADGE = {
@@ -17,11 +18,12 @@ const STATUS_BADGE = {
 }
 
 export default function AdminEnquiries() {
-  const [enquiries, setEnquiries] = useState([])
-  const [selected,  setSelected]  = useState(null)
-  const [total,     setTotal]     = useState(0)
-  const [loading,   setLoading]   = useState(true)
-  const [filter,    setFilter]    = useState({ status: '', search: '', page: 1 })
+  const [enquiries,   setEnquiries]   = useState([])
+  const [selected,    setSelected]    = useState(null)
+  const [total,       setTotal]       = useState(0)
+  const [loading,     setLoading]     = useState(true)
+  const [initialLoad, setInitialLoad] = useState(true)
+  const [filter,      setFilter]      = useState({ status: '', search: '', page: 1 })
 
   const fetchEnquiries = useCallback(async () => {
     setLoading(true)
@@ -35,10 +37,12 @@ export default function AdminEnquiries() {
       setEnquiries(res.data)
       setTotal(res.total)
     } catch {}
-    finally { setLoading(false) }
+    finally { setLoading(false); setInitialLoad(false) }
   }, [filter])
 
   useEffect(() => { fetchEnquiries() }, [fetchEnquiries])
+
+  if (initialLoad && loading) return <PageLoader message="Loading enquiries…" label="Admin" />
 
   const updateStatus = async (id, status) => {
     await api.patch(`/admin/enquiries/${id}`, { status })
