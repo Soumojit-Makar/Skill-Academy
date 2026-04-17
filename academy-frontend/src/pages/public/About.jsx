@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div>
       <div className="bg-gradient-to-r from-slate-900 to-blue-900 text-white py-20 text-center px-4">
-        <h1 className="text-4xl font-bold mb-4">About Academy</h1>
+        <h1 className="text-4xl font-bold mb-4">About DigitalIndian Skillacademy</h1>
         <p className="text-blue-200 max-w-xl mx-auto text-lg">Empowering careers through industry-focused IT education since 2014.</p>
       </div>
       <div className="max-w-5xl mx-auto px-4 py-16 space-y-16">
@@ -12,7 +12,7 @@ export default function About() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Academy was founded with a single mission: bridge the gap between traditional education and industry demands.
+              DigitalIndian Skillacademy was founded with a single mission: bridge the gap between traditional education and industry demands.
               We provide career-ready skills through practical, hands-on training led by working professionals.
             </p>
             <p className="text-gray-600 leading-relaxed">

@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className={`sticky top-0 z-50 border-b ${dark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-100'}`}>
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className={`font-bold text-xl ${dark ? 'text-white' : 'text-gray-900'}`}>
-          🎓 <span className="text-blue-500">Academy</span>
+          🎓 <span className="text-blue-500">DigitalIndian Skillacademy</span>
         </Link>
 
         {/* Desktop */}

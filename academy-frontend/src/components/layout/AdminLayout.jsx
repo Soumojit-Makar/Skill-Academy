@@ -75,7 +75,7 @@ export default function AdminLayout() {
         {/* Mobile top bar */}
         <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-gray-100">
           <button onClick={() => setMobileOpen(true)} className="text-gray-700 text-xl">☰</button>
-          <p className="font-semibold text-sm text-gray-900">Academy CRM</p>
+          <p className="font-semibold text-sm text-gray-900">DigitalIndian Skillacademy CRM</p>
           <div />
         </div>
         <main className="flex-1 overflow-auto">
