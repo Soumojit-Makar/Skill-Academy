@@ -24,7 +24,7 @@ export default function AdminLayout() {
   const Sidebar = () => (
     <aside className="w-56 bg-slate-900 text-white flex flex-col h-full">
       <div className="px-5 py-5 border-b border-slate-700">
-        <p className="font-bold text-base">🎓 Academy CRM</p>
+        <p className="font-bold text-base">🎓 DigitalIndian Skillacademy CRM</p>
         <p className="text-slate-400 text-xs mt-0.5 capitalize">{user?.role}</p>
       </div>
       <nav className="flex-1 py-3 overflow-y-auto">
