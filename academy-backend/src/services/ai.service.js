@@ -6,7 +6,12 @@ const client = new Groq({
 
 export const generateEnquiryInsights = async (enquiry) => {
   try {
-    const prompt = `You are a sales counselor AI for a tech education academy. Analyse this student enquiry and respond ONLY with a valid JSON object — no markdown, no extra text.
+    const prompt = `
+    Return studentMailBody as HTML body content only.
+Do not include greeting like "Dear ...".
+Do not include signature, footer, subject, or placeholders like FRONTEND_URL.
+Use the actual student name and course context naturally inside the paragraphs only.
+    You are a sales counselor AI for a tech education academy. Analyse this student enquiry and respond ONLY with a valid JSON object — no markdown, no extra text.
 
 Enquiry details:
 Name: ${enquiry.name}
