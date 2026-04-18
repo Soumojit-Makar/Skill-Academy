@@ -36,7 +36,7 @@ export default function Courses() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-4 text-center px-4">
+      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">All Courses</h1>
         <p className="text-blue-200 max-w-lg mx-auto">Find the right program to advance your career.</p>
       </div>

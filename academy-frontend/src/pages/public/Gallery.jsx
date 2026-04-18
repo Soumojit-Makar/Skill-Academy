@@ -15,7 +15,7 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-4 text-center px-4">
+      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">Gallery</h1>
         <p className="text-blue-200">A glimpse of life at Academy.</p>
       </div>

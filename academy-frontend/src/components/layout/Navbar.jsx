@@ -1,24 +1,15 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import LOGO from '../../assates/logo.png'
-import {
-  Home,
-  BookOpen,
-  Briefcase,
-  Newspaper,
-  Image,
-  Info,
-  Phone
-} from "lucide-react";
 
 const LINKS = [
-  { to: '/', label: 'Home', icon: Home },
-  { to: '/courses', label: 'Courses', icon: BookOpen },
-  { to: '/placements', label: 'Placements', icon: Briefcase },
-  { to: '/blog', label: 'Blog', icon: Newspaper },
-  { to: '/gallery', label: 'Gallery', icon: Image },
-  { to: '/about', label: 'About', icon: Info },
-  { to: '/contact', label: 'Contact', icon: Phone },
+  { to: '/', label: 'Home',  },
+  { to: '/courses', label: 'Courses', },
+  { to: '/placements', label: 'Placements', },
+  { to: '/blog', label: 'Blog' },
+  { to: '/gallery', label: 'Gallery' },
+  { to: '/about', label: 'About'},
+  { to: '/contact', label: 'Contact'},
 ];
 
 export default function Navbar() {
@@ -36,7 +27,6 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-1">
           {LINKS.map((l) => {
-            const LinkIcon = l.icon;
 
             return (
               <NavLink
@@ -51,16 +41,16 @@ export default function Navbar() {
                   }`
                 }
               >
-                <LinkIcon size={18} />
+                
                 {l.label}
               </NavLink>
             );
           })}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        {/* <div className="hidden md:flex items-center gap-3">
           <Link to="/contact" className="btn-primary text-xs">Free Counselling</Link>
-        </div>
+        </div> */}
 
         <button
           onClick={() => setOpen(o => !o)}

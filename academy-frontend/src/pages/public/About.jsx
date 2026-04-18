@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function About() {
   return (
     <div>
-      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-4 text-center px-4">
+      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-4">
           About DigitalIndian Skillacademy
         </h1>

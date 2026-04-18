@@ -75,7 +75,7 @@ export default function Home() {
             backgroundPosition: "center",
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-2 py-4 lg:py-4 grid lg:grid-cols-2 gap-6 items-center">
+        <div className="relative max-w-7xl mx-auto px-2 py-12 lg:py-12 grid lg:grid-cols-2 gap-6 items-center">
           <div>
             <span className="inline-block text-xs font-semibold tracking-widest text-blue-400 uppercase mb-5 bg-blue-400/10 border border-blue-400/20 px-3 py-1 rounded-full">
               IT & Professional Training
@@ -102,7 +102,7 @@ export default function Home() {
                 See Placements
               </Link>
             </div>
-            <div className="flex gap-6 mt-5">
+            {/* <div className="flex gap-6 mt-5">
               {[
                 ["5000+", "Students"],
                 ["50+", "Courses"],
@@ -113,7 +113,7 @@ export default function Home() {
                   <p className="text-slate-400 text-xs">{l}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* <div className="bg-white rounded-2xl p-7 shadow-2xl">
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* ── COURSES ── */}
-      <section className="py-5 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
@@ -163,7 +163,7 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <p className="text-center text-gray-400 py-6">Courses loading…</p>
+            <p className="text-center text-gray-400 py-16">Courses loading…</p>
           )}
           <div className="text-center mt-2">
             <Link to="/courses" className="btn-outline">
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* ── WHY US ── */}
-      <section className="py-5 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
