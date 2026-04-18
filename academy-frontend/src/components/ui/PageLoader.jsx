@@ -131,12 +131,12 @@ export default function PageLoader({ message, label = "Digital Indian Skill Acad
         .pl-logo-inner {
           width: 54px; height: 54px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #1e40af, #2563eb);
+          background: #ffffff;
           display: flex; align-items: center; justify-content: center;
           box-shadow: 0 0 24px rgba(59,130,246,0.4);
         }
         .pl-logo-letter {
-          color: #fff;
+          color: rgba(0,0,0,0.9);
           font-size: 22px;
           font-weight: 800;
           letter-spacing: -1px;
