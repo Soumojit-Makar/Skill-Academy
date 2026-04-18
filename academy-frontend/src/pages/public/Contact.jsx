@@ -1,5 +1,5 @@
 import EnquiryForm from "../../components/forms/EnquiryForm";
-
+import {Mail,Phone,MapIcon} from "lucide-react"
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -19,10 +19,10 @@ export default function Contact() {
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-gray-900">Get in Touch</h2>
           {[
-            { icon: "📞", label: "Phone", value: "9830640814 | 7908735132" },
-            { icon: "✉️", label: "Email", value: "digitalindian.skillacademy@gmail.com" },
+            { icon: Mail, label: "Phone", value: "9830640814 | 7908735132" },
+            { icon: Phone, label: "Email", value: "digitalindian.skillacademy@gmail.com" },
             {
-              icon: "📍",
+              icon: MapIcon,
               label: "Address",
               value: `Digital Indian EN-9, Sector V,
                       Salt Lake Kolkata,
@@ -34,7 +34,7 @@ export default function Contact() {
               key={i.label}
               className="flex gap-4 p-4 bg-white rounded-xl border border-gray-100"
             >
-              <span className="text-2xl">{i.icon}</span>
+              <i.icon size={24} className="text-blue-500" />
               <div>
                 <p className="text-xs text-gray-400 font-medium">{i.label}</p>
                 <p className="text-gray-800 font-medium">{i.value}</p>

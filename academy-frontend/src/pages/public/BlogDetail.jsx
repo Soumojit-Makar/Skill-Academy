@@ -25,7 +25,7 @@ export default function BlogDetail() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-r from-slate-900 to-blue-900 text-white py-14 px-4">
+      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-4 text-center px-4">
         <div className="max-w-3xl mx-auto">
           <Link to="/blog" className="text-blue-300 text-sm hover:text-white mb-4 inline-block">← Back to Blog</Link>
           <div className="flex flex-wrap gap-2 mb-4">
