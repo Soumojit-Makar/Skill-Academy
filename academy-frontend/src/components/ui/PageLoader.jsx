@@ -61,19 +61,19 @@ export default function PageLoader({ message, label = "Digital Indian Skill Acad
           animation: pl-drift 8s ease-in-out infinite alternate;
         }
         .pl-blob-1 {
-          width: 380px; height: 380px;
+          width: 680px; height: 680px;
           background: radial-gradient(circle, #3b82f6, transparent);
           top: -80px; left: -60px;
           animation-delay: 0s;
         }
         .pl-blob-2 {
-          width: 300px; height: 300px;
+          width: 500px; height: 500px;
           background: radial-gradient(circle, #60a5fa, transparent);
           bottom: -60px; right: -40px;
           animation-delay: -4s;
         }
         .pl-blob-3 {
-          width: 220px; height: 220px;
+          width: 420px; height: 420px;
           background: radial-gradient(circle, #1d4ed8, transparent);
           top: 40%; left: 60%;
           animation-delay: -2s;
@@ -90,17 +90,17 @@ export default function PageLoader({ message, label = "Digital Indian Skill Acad
           background-image:
             linear-gradient(rgba(59,130,246,0.07) 1px, transparent 1px),
             linear-gradient(90deg, rgba(59,130,246,0.07) 1px, transparent 1px);
-          background-size: 48px 48px;
+          background-size: 248px 248px;
           mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
         }
 
         /* ── logo mark ── */
         .pl-logo-wrap {
           position: relative;
-          margin-bottom: 28px;
+          margin-bottom: 128px;
         }
         .pl-logo-ring {
-          width: 80px; height: 80px;
+          width: 280px; height: 280px;
           border-radius: 50%;
           border: 2px solid rgba(59,130,246,0.25);
           display: flex; align-items: center; justify-content: center;
@@ -129,7 +129,7 @@ export default function PageLoader({ message, label = "Digital Indian Skill Acad
           to { transform: rotate(360deg); }
         }
         .pl-logo-inner {
-          width: 54px; height: 54px;
+          width: 254px; height: 254px;
           border-radius: 50%;
           background: #ffffff;
           display: flex; align-items: center; justify-content: center;
