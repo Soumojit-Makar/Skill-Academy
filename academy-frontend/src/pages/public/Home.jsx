@@ -65,9 +65,9 @@ export default function Home() {
   return (
     <div>
       {/* ── HERO ── */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white overflow-hidden">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-50"
           style={{
             backgroundImage: `url(${bannerImg})`,
             backgroundRepeat: "no-repeat",
