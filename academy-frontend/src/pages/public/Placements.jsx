@@ -13,7 +13,7 @@ const PLACED = [
 export default function Placements() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-r from-green-800 to-blue-900 text-white py-20 text-center px-4">
+      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-4 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">Our Placement Record</h1>
         <p className="text-green-200 text-lg max-w-xl mx-auto">95% of our students land jobs within 3 months of completion.</p>
         <div className="flex justify-center gap-8 mt-10">

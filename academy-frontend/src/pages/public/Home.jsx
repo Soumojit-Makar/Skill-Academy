@@ -75,7 +75,7 @@ export default function Home() {
             backgroundPosition: "center",
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-2 py-4 lg:py-4 grid lg:grid-cols-2 gap-6 items-center">
           <div>
             <span className="inline-block text-xs font-semibold tracking-widest text-blue-400 uppercase mb-5 bg-blue-400/10 border border-blue-400/20 px-3 py-1 rounded-full">
               IT & Professional Training
@@ -102,7 +102,7 @@ export default function Home() {
                 See Placements
               </Link>
             </div>
-            <div className="flex gap-6 mt-10">
+            <div className="flex gap-6 mt-5">
               {[
                 ["5000+", "Students"],
                 ["50+", "Courses"],
@@ -116,7 +116,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-7 shadow-2xl">
+          {/* <div className="bg-white rounded-2xl p-7 shadow-2xl">
             <h3 className="text-gray-900 text-xl font-bold mb-1">
               Get Free Career Guidance
             </h3>
@@ -124,13 +124,13 @@ export default function Home() {
               Talk to our counselor — no commitment needed
             </p>
             <EnquiryForm source="home" />
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* ── STATS BAR ── */}
-      <section className="bg-sky-400 py-8">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center">
+      <section className="bg-sky-400 py-4">
+        <div className="max-w-7xl mx-auto px-2 grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center">
           {[
             ["5000+", "Students Trained"],
             ["50+", "Industry Courses"],
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* ── COURSES ── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
@@ -163,9 +163,9 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <p className="text-center text-gray-400 py-12">Courses loading…</p>
+            <p className="text-center text-gray-400 py-6">Courses loading…</p>
           )}
-          <div className="text-center mt-10">
+          <div className="text-center mt-2">
             <Link to="/courses" className="btn-outline">
               View All Courses →
             </Link>
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* ── WHY US ── */}
-      <section className="py-20 bg-white">
+      <section className="py-5 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
@@ -203,7 +203,7 @@ export default function Home() {
 
       {/* ── TESTIMONIALS ── */}
       {testimonials.length > 0 && (
-        <section className="py-20 bg-blue-50">
+        <section className="py-5 bg-blue-50">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
               Student Success Stories
@@ -242,7 +242,7 @@ export default function Home() {
 
       {/* ── FAQ ── */}
       {faqs.length > 0 && (
-        <section className="py-20 bg-white">
+        <section className="py-5 bg-white">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
               Frequently Asked Questions
@@ -279,7 +279,7 @@ export default function Home() {
       )}
 
       {/* ── CTA BANNER ── */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-16 text-white text-center">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-4 text-white text-center">
         <h2 className="text-3xl font-bold mb-3">
           Ready to Start Your Career Journey?
         </h2>
