@@ -17,7 +17,7 @@ const TIPS = [
 ];
 
 import { useEffect, useState } from "react";
-import logoSrc from "../../assates/logo.png";
+import logoSrc from "../../assates/logo-removebg.png";
 export default function PageLoader({ message, label = "Digital Indian Skill Academy" }) {
   const [tipIndex, setTipIndex] = useState(0);
   const [fade, setFade] = useState(true);
