@@ -1,5 +1,7 @@
 // About Page
 import { Link } from "react-router-dom";
+import ABOUT from "../../assates/about.png";
+import Mission from "../../assates/mission.png";
 export default function About() {
   return (
     <div>
@@ -15,6 +17,13 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">About Us</h2>
+            <div className="w-full h-64 mb-6">
+              <img
+                src={ABOUT}
+                alt="About Us"
+                className="w-full h-full object-cover rounded-lg shadow-sm"
+              />
+            </div>
             <p className="text-gray-600 leading-relaxed mb-4">
               Digital Indian Skill Academy is a premier training institute
               focused on building industry-ready professionals in cutting-edge
@@ -31,6 +40,13 @@ export default function About() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Our Mission
             </h2>
+            <div className="w-full h-64 mb-6">
+              <img
+                src={Mission}
+                alt="Our Mission"
+                className="w-full h-full object-cover rounded-lg shadow-sm"
+              />
+            </div>
             <p className="text-gray-600 leading-relaxed mb-4">
               DigitalIndian Skillacademy was founded with a single mission:
               bridge the gap between traditional education and industry demands.

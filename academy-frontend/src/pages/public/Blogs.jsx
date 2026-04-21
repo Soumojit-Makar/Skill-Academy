@@ -18,7 +18,7 @@ export default function Blogs() {
       .finally(() => { setLoading(false); setInitialLoad(false) })
   }, [page])
 
-  if (initialLoad && loading) return <PageLoader message="Fetching latest blog posts…" />
+  if (initialLoad && loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -31,7 +31,7 @@ export default function Courses() {
 
   const setF = (key, val) => setFilter(p => ({ ...p, [key]: val, page: 1 }))
 
-  if (initialLoad && loading) return <PageLoader message="Loading all courses…" />
+  if (initialLoad && loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -18,7 +18,7 @@ export default function CourseDetail() {
       .finally(() => setLoading(false))
   }, [slug])
 
-  if (loading) return <PageLoader message="Loading course details…" />
+  if (loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>
   if (!course)  return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-4">
       <p className="text-2xl">😕</p>

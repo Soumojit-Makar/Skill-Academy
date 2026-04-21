@@ -11,7 +11,7 @@ export default function Gallery() {
     api.get('/gallery').then(r => setItems(r.data)).catch(() => {}).finally(() => setLoading(false))
   }, [])
 
-  if (loading) return <PageLoader message="Loading gallery…" />
+  if (loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -60,7 +60,7 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <PageLoader message="Loading your courses & content…" />;
+  if (loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>;
 
   return (
     <div>
@@ -75,20 +75,20 @@ export default function Home() {
             backgroundPosition: "center",
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-2 py-12 lg:py-12 grid lg:grid-cols-2 gap-6 items-center">
+        <div className="relative max-w-7xl mx-auto px-2 py-20 lg:py-20 grid lg:grid-cols-2 gap-6 items-center">
           <div>
-            <span className="inline-block text-xs font-semibold tracking-widest text-blue-400 uppercase mb-5 bg-blue-400/10 border border-blue-400/20 px-3 py-1 rounded-full">
+            {/* <span className="inline-block text-xs font-semibold tracking-widest text-blue-400 uppercase mb-5 bg-blue-400/10 border border-blue-400/20 px-3 py-1 rounded-full">
               Skill Development & Professional Training
-            </span>
+            </span> */}
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5">
               Learn New Skills, Build Your Future with{" "}
               <span className="text-blue-400">Confidence</span>
             </h1>
-            <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
+            {/* <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
               
   Explore career-focused and academic programs across technology, business,
   design, finance, language, and professional development — all in one place.
-            </p>
+            </p> */}
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/courses"

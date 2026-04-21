@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import api from '../../api/axios'
-import PageLoader from '../../components/ui/PageLoader'
+// import PageLoader from '../../components/ui/PageLoader'
 
 export default function BlogDetail() {
   const { slug } = useParams()
@@ -15,7 +15,7 @@ export default function BlogDetail() {
       .finally(() => setLoading(false))
   }, [slug])
 
-  if (loading) return <PageLoader message="Loading blog post…" />
+  if (loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>
   if (!blog)   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-4">
       <p className="text-2xl">😕</p><p className="text-gray-700">Post not found</p>
