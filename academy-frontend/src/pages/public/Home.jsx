@@ -8,33 +8,33 @@ import bannerImg from "../../assates/banner.png";
 const BENEFITS = [
   {
     icon: "🎯",
-    title: "Career-Focused Curriculum",
-    desc: "Every course designed with industry requirements and real job roles in mind.",
+    title: "Career-Oriented Learning",
+    desc: "Programs designed to build practical skills for students, job seekers, and working professionals.",
   },
   {
-    icon: "👨‍💼",
-    title: "Expert Trainers",
-    desc: "Learn from professionals with 10+ years of industry experience.",
+    icon: "👨‍🏫",
+    title: "Experienced Trainers",
+    desc: "Learn from qualified mentors and industry professionals across multiple domains.",
   },
   {
-    icon: "🏆",
-    title: "95% Placement Rate",
-    desc: "Our dedicated placement team connects you with top companies.",
+    icon: "📚",
+    title: "Wide Range of Courses",
+    desc: "Explore IT, management, design, language, finance, vocational, and professional training programs.",
   },
   {
     icon: "💻",
-    title: "Hands-On Projects",
-    desc: "Build a portfolio with real-world projects and live case studies.",
+    title: "Practical Training",
+    desc: "Gain hands-on knowledge through projects, activities, workshops, and real-world practice.",
   },
   {
-    icon: "📜",
-    title: "Industry Certifications",
-    desc: "Earn certifications recognized by leading tech companies.",
+    icon: "🏆",
+    title: "Certification Support",
+    desc: "Receive course completion certificates to strengthen your academic and career profile.",
   },
   {
-    icon: "🔄",
-    title: "Lifetime Access",
-    desc: "Access course materials and updates for life after enrollment.",
+    icon: "🤝",
+    title: "Student Guidance",
+    desc: "Get support with career counseling, skill development, and future learning pathways.",
   },
 ];
 
@@ -78,15 +78,16 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-2 py-12 lg:py-12 grid lg:grid-cols-2 gap-6 items-center">
           <div>
             <span className="inline-block text-xs font-semibold tracking-widest text-blue-400 uppercase mb-5 bg-blue-400/10 border border-blue-400/20 px-3 py-1 rounded-full">
-              IT & Professional Training
+              Skill Development & Professional Training
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5">
-              Launch Your Tech Career with{" "}
+              Learn New Skills, Build Your Future with{" "}
               <span className="text-blue-400">Confidence</span>
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
-              Industry-driven programs in Full Stack, Cloud, Data Analytics, AI
-              & more. Placement assistance guaranteed.
+              
+  Explore career-focused and academic programs across technology, business,
+  design, finance, language, and professional development — all in one place.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
