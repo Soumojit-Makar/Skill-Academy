@@ -36,7 +36,7 @@ import PcW from "../../assates/PwC.png";
 import SkillIndia from "../../assates/skill-india.png";
 import StartUpindian from "../../assates/Startupindian.png";
 import TCS from "../../assates/TCS.png";
-import TechMahindra from "../../assates/Tech-Mahindra.png";
+import TechMahindra from "../../assates/tech-mahindra.png";
 import Wipro from "../../assates/Wipro-logo.png";
 const HERO_IMAGES = [
   {
