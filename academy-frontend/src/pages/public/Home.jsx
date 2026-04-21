@@ -5,34 +5,40 @@ import EnquiryForm from "../../components/forms/EnquiryForm";
 import CourseCard from "../../components/sections/CourseCard";
 import PageLoader from "../../components/ui/PageLoader";
 import bannerImg from "../../assates/banner.png";
+import Career from "../../assates/Career-Oriented.png";
+import Trainers from "../../assates/Experienced-Trainers.png";
+import Courses from "../../assates/Wide-Range-of-Courses.png";
+import Practical from "../../assates/Practical-Training.png";
+import Certification from "../../assates/Certification-Support.png";
+import Guidance from "../../assates/Student-Guidance.png";
 const BENEFITS = [
   {
-    icon: "🎯",
+    icon: Career,
     title: "Career-Oriented Learning",
     desc: "Programs designed to build practical skills for students, job seekers, and working professionals.",
   },
   {
-    icon: "👨‍🏫",
+    icon: Trainers,
     title: "Experienced Trainers",
     desc: "Learn from qualified mentors and industry professionals across multiple domains.",
   },
   {
-    icon: "📚",
+    icon: Courses,
     title: "Wide Range of Courses",
     desc: "Explore IT, management, design, language, finance, vocational, and professional training programs.",
   },
   {
-    icon: "💻",
+    icon: Practical,
     title: "Practical Training",
     desc: "Gain hands-on knowledge through projects, activities, workshops, and real-world practice.",
   },
   {
-    icon: "🏆",
+    icon: Certification,
     title: "Certification Support",
     desc: "Receive course completion certificates to strengthen your academic and career profile.",
   },
   {
-    icon: "🤝",
+    icon: Guidance,
     title: "Student Guidance",
     desc: "Get support with career counseling, skill development, and future learning pathways.",
   },
@@ -60,7 +66,12 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>;
+  if (loading)
+    return (
+      <p className="min-h-screen flex items-center justify-center">
+        Loading...
+      </p>
+    );
 
   return (
     <div>
@@ -189,13 +200,27 @@ export default function Home() {
             {BENEFITS.map((b) => (
               <div
                 key={b.title}
-                className="p-6 rounded-xl border border-gray-100 hover:border-blue-100 hover:shadow-sm transition-all"
+                className="rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                <div className="text-3xl mb-3">{b.icon}</div>
-                <h3 className="font-semibold text-gray-900 mb-2">{b.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
-                  {b.desc}
-                </p>
+                {/* Full width image */}
+                <div className="w-full h-48">
+                  <img
+                    src={b.icon}
+                    alt={b.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-6 text-center">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                    {b.title}
+                  </h3>
+
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {b.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
