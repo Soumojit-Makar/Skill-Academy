@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
 import api from "../../api/axios";
 import EnquiryForm from "../../components/forms/EnquiryForm";
 import CourseCard from "../../components/sections/CourseCard";
@@ -11,6 +16,43 @@ import Courses from "../../assates/Wide-Range-of-Courses.png";
 import Practical from "../../assates/Practical-Training.png";
 import Certification from "../../assates/Certification-Support.png";
 import Guidance from "../../assates/Student-Guidance.png";
+
+// Partner logos
+import Accenture from "../../assates/Accenture.png";
+import Amazon from "../../assates/Amazon.png";
+import Assocham from "../../assates/ASSOCHAM.png";
+import AxisBank from "../../assates/Axis-Bank.png";
+import BajaFinance from "../../assates/Baja-Finance.png";
+import BandhanBank from "../../assates/bandhan-bank-logo.png";
+import Capgemini from "../../assates/Capgemini.png";
+import CII from "../../assates/CII.png";
+import Citigroup from "../../assates/Citigroup.png";
+import Cognizant from "../../assates/Cognizant.png";
+import Deloitte from "../../assates/Deloitte.png";
+import EY from "../../assates/EY.png";
+import GoldmanSachs from "../../assates/Goldman-Sachs.png";
+import Google from "../../assates/google-logo.png";
+import HCL from "../../assates/HCL.png";
+import HDFC from "../../assates/HDFC.png";
+import HSBC from "../../assates/HSBC-Holdings.png";
+import IBM from "../../assates/IBM.png";
+import ICICI from "../../assates/ICICI-Bank.png";
+import Infosys from "../../assates/Infosys_Logo.png";
+import JioFinancial from "../../assates/Jio-Financial-Services.png";
+import JPMorgan from "../../assates/JPMorgan-Chase.png";
+import Kotak from "../../assates/Kotak-Mahindra-Bank-Limited.png";
+import KPMG from "../../assates/KPMG.png";
+import Microsoft from "../../assates/Microsoft.png";
+import MorganStanley from "../../assates/Morgan-Stanley.png";
+import NASSCOM from "../../assates/nasscom.png";
+import Oracle from "../../assates/Oracle-logo.png";
+import PcW from "../../assates/PwC.png";
+import SkillIndia from "../../assates/skill-india.png";
+import StartUpindian from "../../assates/Startupindian.png";
+import TCS from "../../assates/TCS.png";
+import TechMahindra from "../../assates/Tech-Mahindra.png";
+import Wipro from "../../assates/Wipro-logo.png";
+
 const BENEFITS = [
   {
     icon: Career,
@@ -44,6 +86,111 @@ const BENEFITS = [
   },
 ];
 
+const HERO_IMAGES = [
+  {
+    image: Accenture,
+  },
+  {
+    image: Amazon,
+  },
+  {
+    image: Assocham,
+  },
+  {
+    image: Capgemini,
+  },
+  {
+    image: CII,
+  },
+  {
+    image: Cognizant,
+  },
+  {
+    image: Google,
+  },
+  {
+    image: HCL,
+  },
+  {
+    image: IBM,
+  },
+  {
+    image: Infosys,
+  },
+  {
+    image: Microsoft,
+  },
+  {
+    image: Oracle,
+  },
+  {
+    image: TCS,
+  },
+  {
+    image: Wipro,
+  },
+  {
+    image: NASSCOM,
+  },
+  {
+    image: SkillIndia,
+  },
+  {
+    image: StartUpindian,
+  },
+  {
+    image: AxisBank,
+  },
+  {
+    image: BajaFinance,
+  },
+  {
+    image: BandhanBank,
+  },
+  {
+    image: Citigroup,
+  },
+  {
+    image: Deloitte,
+  },
+  {
+    image: EY,
+  },
+  {
+    image: GoldmanSachs,
+  },
+  {
+    image: HDFC,
+  },
+  {
+    image: HSBC,
+  },
+  {
+    image: ICICI,
+  },
+  {
+    image: JioFinancial,
+  },
+  {
+    image: JPMorgan,
+  },
+  {
+    image: Kotak,
+  },
+  {
+    image: KPMG,
+  },
+  {
+    image: MorganStanley,
+  },
+  {
+    image: PcW,
+  },
+  {
+    image: TechMahindra,
+  },
+];
+
 export default function Home() {
   const [courses, setCourses] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
@@ -66,12 +213,13 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading)
+  if (loading) {
     return (
       <p className="min-h-screen flex items-center justify-center">
         Loading...
       </p>
     );
+  }
 
   return (
     <div>
@@ -88,18 +236,11 @@ export default function Home() {
         />
         <div className="relative max-w-7xl mx-auto px-2 py-20 lg:py-20 grid lg:grid-cols-2 gap-6 items-center">
           <div>
-            {/* <span className="inline-block text-xs font-semibold tracking-widest text-blue-400 uppercase mb-5 bg-blue-400/10 border border-blue-400/20 px-3 py-1 rounded-full">
-              Skill Development & Professional Training
-            </span> */}
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5">
               Learn New Skills, Build Your Future with{" "}
               <span className="text-blue-400">Confidence</span>
             </h1>
-            {/* <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
-              
-  Explore career-focused and academic programs across technology, business,
-  design, finance, language, and professional development — all in one place.
-            </p> */}
+
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/courses"
@@ -114,29 +255,7 @@ export default function Home() {
                 See Placements
               </Link>
             </div>
-            {/* <div className="flex gap-6 mt-5">
-              {[
-                ["5000+", "Students"],
-                ["50+", "Courses"],
-                ["95%", "Placed"],
-              ].map(([n, l]) => (
-                <div key={l}>
-                  <p className="text-2xl font-bold text-white">{n}</p>
-                  <p className="text-slate-400 text-xs">{l}</p>
-                </div>
-              ))}
-            </div> */}
           </div>
-
-          {/* <div className="bg-white rounded-2xl p-7 shadow-2xl">
-            <h3 className="text-gray-900 text-xl font-bold mb-1">
-              Get Free Career Guidance
-            </h3>
-            <p className="text-gray-400 text-sm mb-5">
-              Talk to our counselor — no commitment needed
-            </p>
-            <EnquiryForm source="home" />
-          </div> */}
         </div>
       </section>
 
@@ -168,6 +287,7 @@ export default function Home() {
               Career-aligned programs designed by industry experts.
             </p>
           </div>
+
           {courses.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {courses.map((c) => (
@@ -177,6 +297,7 @@ export default function Home() {
           ) : (
             <p className="text-center text-gray-400 py-16">Courses loading…</p>
           )}
+
           <div className="text-center mt-2">
             <Link to="/courses" className="btn-outline">
               View All Courses →
@@ -196,13 +317,13 @@ export default function Home() {
               We don't just teach — we build careers.
             </p>
           </div>
+
           <div className="grid md:grid-cols-3 gap-6">
             {BENEFITS.map((b) => (
               <div
                 key={b.title}
                 className="rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                {/* Full width image */}
                 <div className="w-full h-48">
                   <img
                     src={b.icon}
@@ -211,7 +332,6 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="p-6 text-center">
                   <h3 className="font-semibold text-lg text-gray-900 mb-2">
                     {b.title}
@@ -303,7 +423,42 @@ export default function Home() {
           </div>
         </section>
       )}
-
+      {/* ── HERO LOWER CAROUSEL ── */}
+      <section className="bg-white py-2 -mt-6 relative z-10">
+        <div className="max-h-1/2 mx-auto px-4">
+        <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Students Are Placed In</h2>
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={15}
+            slidesPerView={1}
+            loop={true}
+            navigation={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 12 },
+            }}
+            className="academyHeroSwiper"
+          >
+            {HERO_IMAGES.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="group rounded-xl overflow-hidden bg-white   shadow-sm hover:shadow-lg transition-all duration-300">
+                  <div className="relative h-45 md:h-45 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={"IMG-" + index}
+                      className="w-full h-full object-fill group-hover:scale-105 transition duration-500"
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
       {/* ── CTA BANNER ── */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-4 text-white text-center">
         <h2 className="text-3xl font-bold mb-3">

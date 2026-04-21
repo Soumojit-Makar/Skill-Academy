@@ -7,7 +7,16 @@
   body { font-family: 'Inter', system-ui, sans-serif; }
   html { scroll-behavior: smooth; }
 }
+.academyHeroSwiper .swiper-button-next,
+.academyHeroSwiper .swiper-button-prev {
+  color: #2563eb;
+}
 
+.academyHeroSwiper .swiper-button-next:after,
+.academyHeroSwiper .swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
 @layer components {
   .btn-primary {
     @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm;

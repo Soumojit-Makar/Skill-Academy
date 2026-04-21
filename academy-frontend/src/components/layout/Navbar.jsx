@@ -6,7 +6,7 @@ const LINKS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/courses", label: "Courses" },
-  { to: "/placements", label: "Placements" },
+  { to: "/placements", label: "Career" },
   { to: "/gallery", label: "Gallery" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
@@ -19,13 +19,13 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b bg-white border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-32">
         <Link
           to="/"
           className={`font-bold text-xl ${dark ? "text-white" : "text-gray-900"}`}
         >
-          <img src={LOGO} alt="Logo" className="h-8 inline-block mr-2" />
-          <span className="text-blue-500">DigitalIndian Skillacademy</span>
+          <img src={LOGO} alt="Logo" className="h-20 inline-block mr-2" />
+          {/* <span className="text-blue-500">DigitalIndian Skillacademy</span> */}
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

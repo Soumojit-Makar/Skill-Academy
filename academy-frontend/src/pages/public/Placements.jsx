@@ -1,15 +1,177 @@
 import { Link } from 'react-router-dom'
-
-const COMPANIES = ['Google','Microsoft','Amazon','Wipro','Infosys','TCS','HCL','Capgemini','Cognizant','Accenture','IBM','Oracle']
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+// Partner logos
+import Accenture from "../../assates/Accenture.png";
+import Amazon from "../../assates/Amazon.png";
+import Assocham from "../../assates/ASSOCHAM.png";
+import AxisBank from "../../assates/Axis-Bank.png";
+import BajaFinance from "../../assates/Baja-Finance.png";
+import BandhanBank from "../../assates/bandhan-bank-logo.png";
+import Capgemini from "../../assates/Capgemini.png";
+import CII from "../../assates/CII.png";
+import Citigroup from "../../assates/Citigroup.png";
+import Cognizant from "../../assates/Cognizant.png";
+import Deloitte from "../../assates/Deloitte.png";
+import EY from "../../assates/EY.png";
+import GoldmanSachs from "../../assates/Goldman-Sachs.png";
+import Google from "../../assates/google-logo.png";
+import HCL from "../../assates/HCL.png";
+import HDFC from "../../assates/HDFC.png";
+import HSBC from "../../assates/HSBC-Holdings.png";
+import IBM from "../../assates/IBM.png";
+import ICICI from "../../assates/ICICI-Bank.png";
+import Infosys from "../../assates/Infosys_Logo.png";
+import JioFinancial from "../../assates/Jio-Financial-Services.png";
+import JPMorgan from "../../assates/JPMorgan-Chase.png";
+import Kotak from "../../assates/Kotak-Mahindra-Bank-Limited.png";
+import KPMG from "../../assates/KPMG.png";
+import Microsoft from "../../assates/Microsoft.png";
+import MorganStanley from "../../assates/Morgan-Stanley.png";
+import NASSCOM from "../../assates/nasscom.png";
+import Oracle from "../../assates/Oracle-logo.png";
+import PcW from "../../assates/PwC.png";
+import SkillIndia from "../../assates/skill-india.png";
+import StartUpindian from "../../assates/Startupindian.png";
+import TCS from "../../assates/TCS.png";
+import TechMahindra from "../../assates/Tech-Mahindra.png";
+import Wipro from "../../assates/Wipro-logo.png";
+const HERO_IMAGES = [
+  {
+    image: Accenture,
+  },
+  {
+    image: Amazon,
+  },
+  {
+    image: Assocham,
+  },
+  {
+    image: Capgemini,
+  },
+  {
+    image: CII,
+  },
+  {
+    image: Cognizant,
+  },
+  {
+    image: Google,
+  },
+  {
+    image: HCL,
+  },
+  {
+    image: IBM,
+  },
+  {
+    image: Infosys,
+  },
+  {
+    image: Microsoft,
+  },
+  {
+    image: Oracle,
+  },
+  {
+    image: TCS,
+  },
+  {
+    image: Wipro,
+  },
+  {
+    image: NASSCOM,
+  },
+  {
+    image: SkillIndia,
+  },
+  {
+    image: StartUpindian,
+  },
+  {
+    image: AxisBank,
+  },
+  {
+    image: BajaFinance,
+  },
+  {
+    image: BandhanBank,
+  },
+  {
+    image: Citigroup,
+  },
+  {
+    image: Deloitte,
+  },
+  {
+    image: EY,
+  },
+  {
+    image: GoldmanSachs,
+  },
+  {
+    image: HDFC,
+  },
+  {
+    image: HSBC,
+  },
+  {
+    image: ICICI,
+  },
+  {
+    image: JioFinancial,
+  },
+  {
+    image: JPMorgan,
+  },
+  {
+    image: Kotak,
+  },
+  {
+    image: KPMG,
+  },
+  {
+    image: MorganStanley,
+  },
+  {
+    image: PcW,
+  },
+  {
+    image: TechMahindra,
+  },
+];
 const PLACED = [
-  { name: 'Priya S.', role: 'Full Stack Developer', company: 'Wipro', package: '7.5 LPA', course: 'Full Stack Development' },
-  { name: 'Rajan K.', role: 'Data Analyst', company: 'Infosys', package: '6.2 LPA', course: 'Data Analytics' },
-  { name: 'Sneha M.', role: 'UI/UX Designer', company: 'Startex', package: '8 LPA', course: 'UI/UX Design' },
-  { name: 'Arjun T.', role: 'Cloud Engineer', company: 'HCL', package: '9 LPA', course: 'AWS Cloud' },
-  { name: 'Divya R.', role: 'Digital Marketer', company: 'MediaCorp', package: '5.5 LPA', course: 'Digital Marketing' },
-  { name: 'Kiran P.', role: 'AI Engineer', company: 'TechMinds', package: '12 LPA', course: 'AI Skills' },
-]
+  { name: 'Amit Sharma', role: 'Software Engineer', company: 'TCS', location: 'Kolkata', package: '6.5 LPA', course: 'Full Stack Development' },
+  { name: 'Priya Verma', role: 'Frontend Developer', company: 'Infosys', location: 'Bangalore', package: '7.2 LPA', course: 'Web Development' },
+  { name: 'Rahul Das', role: 'Backend Developer', company: 'Wipro', location: 'Hyderabad', package: '6.8 LPA', course: 'Java Full Stack' },
+  { name: 'Sneha Roy', role: 'UI/UX Designer', company: 'Accenture', location: 'Pune', package: '8.5 LPA', course: 'UI/UX Design' },
+  { name: 'Arjun Mehta', role: 'Cloud Engineer', company: 'HCL', location: 'Noida', package: '9.2 LPA', course: 'AWS Cloud' },
+  { name: 'Neha Singh', role: 'Data Analyst', company: 'Capgemini', location: 'Mumbai', package: '7.8 LPA', course: 'Data Analytics' },
+  { name: 'Karan Gupta', role: 'DevOps Engineer', company: 'Cognizant', location: 'Chennai', package: '10 LPA', course: 'DevOps' },
+  { name: 'Anjali Patel', role: 'AI Engineer', company: 'IBM', location: 'Bangalore', package: '12 LPA', course: 'AI & ML' },
+  { name: 'Rohit Kumar', role: 'Business Analyst', company: 'Deloitte', location: 'Gurgaon', package: '8 LPA', course: 'Business Analysis' },
+  { name: 'Meera Nair', role: 'Cybersecurity Analyst', company: 'EY', location: 'Hyderabad', package: '9.5 LPA', course: 'Cybersecurity' },
 
+  { name: 'Vikas Yadav', role: 'Full Stack Developer', company: 'JPMorgan', location: 'Mumbai', package: '14 LPA', course: 'Full Stack Development' },
+  { name: 'Pooja Sharma', role: 'Software Engineer', company: 'Microsoft', location: 'Bangalore', package: '18 LPA', course: 'Advanced Programming' },
+  { name: 'Rakesh Gupta', role: 'System Engineer', company: 'Infosys', location: 'Pune', package: '6.3 LPA', course: 'IT Fundamentals' },
+  { name: 'Simran Kaur', role: 'QA Engineer', company: 'Wipro', location: 'Noida', package: '5.8 LPA', course: 'Software Testing' },
+  { name: 'Deepak Singh', role: 'Network Engineer', company: 'Tech Mahindra', location: 'Delhi', package: '6.9 LPA', course: 'Networking' },
+
+  { name: 'Ankit Jain', role: 'Backend Developer', company: 'Amazon', location: 'Hyderabad', package: '15 LPA', course: 'Backend Development' },
+  { name: 'Riya Sen', role: 'Frontend Developer', company: 'Google', location: 'Bangalore', package: '20 LPA', course: 'Frontend Development' },
+  { name: 'Manish Tiwari', role: 'Cloud Engineer', company: 'Oracle', location: 'Chennai', package: '11 LPA', course: 'Cloud Computing' },
+  { name: 'Kavita Mishra', role: 'Data Scientist', company: 'Flipkart', location: 'Bangalore', package: '13 LPA', course: 'Data Science' },
+  { name: 'Sandeep Roy', role: 'Software Engineer', company: 'Zoho', location: 'Chennai', package: '10.5 LPA', course: 'Full Stack Development' },
+
+  { name: 'Pritam Ghosh', role: 'Business Analyst', company: 'HDFC Bank', location: 'Kolkata', package: '7.5 LPA', course: 'Business Analytics' },
+  { name: 'Ayesha Khan', role: 'Finance Analyst', company: 'ICICI Bank', location: 'Mumbai', package: '8.2 LPA', course: 'Finance Management' },
+  { name: 'Rohini Das', role: 'HR Executive', company: 'PwC', location: 'Gurgaon', package: '6.7 LPA', course: 'HR Management' },
+  { name: 'Vivek Mishra', role: 'Consultant', company: 'KPMG', location: 'Bangalore', package: '9 LPA', course: 'Consulting' },
+  { name: 'Nikhil Verma', role: 'Risk Analyst', company: 'HSBC', location: 'Kolkata', package: '8.8 LPA', course: 'Finance & Risk' },
+];
 export default function Placements() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -28,14 +190,39 @@ export default function Placements() {
 
       <div className="max-w-6xl mx-auto px-4 py-16 space-y-16">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Hiring Partners</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {COMPANIES.map(c => (
-              <span key={c} className="bg-white border border-gray-200 text-gray-700 font-medium px-5 py-2.5 rounded-lg text-sm shadow-sm">
-                {c}
-              </span>
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Students Are Placed In</h2>
+          
+            <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={15}
+            slidesPerView={1}
+            loop={true}
+            // navigation={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 12 },
+            }}
+            className="academyHeroSwiper"
+          >
+            {HERO_IMAGES.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="group justify-center overflow-hidden   shadow-sm hover:shadow-lg transition-all duration-300">
+                  <div className="relative h-45 md:h-45 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={"IMG-" + index}
+                      className="w-full h-full object-fill group-hover:scale-105 transition duration-500"
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
+         
         </div>
 
         <div>
