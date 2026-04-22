@@ -27,7 +27,7 @@ export default function AdminDashboard() {
       .finally(() => setLoading(false))
   }, [])
 
-  if (loading) return <PageLoader message="Loading dashboard…" label="Admin" />
+   if (initialLoad && loading) return <p className="min-h-screen flex items-center justify-center" >Loading…</p>
 
   if (!data) return (
     <div className="p-8 text-red-500 text-sm">Failed to load dashboard. Check API connection.</div>

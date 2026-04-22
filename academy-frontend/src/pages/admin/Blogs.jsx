@@ -20,7 +20,7 @@ export default function AdminBlogs() {
   }
   useEffect(load, [])
 
-  if (initialLoad && loading) return <PageLoader message="Loading blogs…" label="Admin" />
+  if (initialLoad && loading) return <p className="min-h-screen flex items-center justify-center" >Loading…</p>
 
   const open = (b = null) => {
     setEditing(b)

@@ -460,11 +460,11 @@ export default function Home() {
         </div>
       </section>
       {/* ── CTA BANNER ── */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-4 text-white text-center">
+      <section className="bg-gradient-to-r from-sky-300 to-sky-400 py-4 text-gray-800 text-center">
         <h2 className="text-3xl font-bold mb-3">
           Ready to Start Your Career Journey?
         </h2>
-        <p className="text-blue-100 mb-7 max-w-xl mx-auto">
+        <p className="text-blue-800 mb-7 max-w-xl mx-auto">
           Join 5000+ students who transformed their careers with Academy.
         </p>
         <Link

@@ -56,7 +56,7 @@ export function AdminCategories() {
   }
   const set = e => setForm(p => ({ ...p, [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
 
-  if (initialLoad && loading) return <PageLoader message="Loading categories…" label="Admin" />
+   if (initialLoad && loading) return <p className="min-h-screen flex items-center justify-center" >Loading…</p>
 
   return (
     <div className="p-6">

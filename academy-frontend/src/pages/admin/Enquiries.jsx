@@ -42,7 +42,7 @@ export default function AdminEnquiries() {
 
   useEffect(() => { fetchEnquiries() }, [fetchEnquiries])
 
-  if (initialLoad && loading) return <PageLoader message="Loading enquiries…" label="Admin" />
+   if (initialLoad && loading) return <p className="min-h-screen flex items-center justify-center" >Loading…</p>
 
   const updateStatus = async (id, status) => {
     await api.patch(`/admin/enquiries/${id}`, { status })
