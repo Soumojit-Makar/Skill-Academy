@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import LOGO from '../../assates/logo.png'
+import DIGITALINDIAN from '../../assates/digitalindan-logo.png'
 import {Mail,Phone,MapIcon} from "lucide-react"
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 export default function Footer() {
@@ -8,11 +9,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-4 grid md:grid-cols-4 gap-8">
         <div>
           <p className="font-bold text-white text-lg mb-3">
-            <img src={LOGO} alt="Logo" className="h-8 inline-block mr-2" />
-            DigitalIndian Skillacademy
+            <img src={LOGO} alt="Logo" className="h-16 inline-block mr-2" />
           </p>
           <p className="text-sm leading-relaxed text-slate-400">
-            Career-focused IT & professional training with placement support.
+            A Unit of Digital Indian Business Solutions Pvt. Ltd
+          </p>
+           <p className="font-bold text-white text-lg mb-3">
+            <img src={DIGITALINDIAN} alt="Digital Indian Logo" className="h-16 inline-block mr-2" />
           </p>
         </div>
         <div>
