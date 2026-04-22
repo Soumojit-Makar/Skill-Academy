@@ -117,12 +117,19 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div>
+        {/* <div>
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Our Location
           </h2>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3509.850985682433!2d88.4298909!3d22.57356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275afb2b1cef1%3A0x181dda8377acf1d9!2sEn-9%20Roys%20It%20Park%2C%20EN%20Block%2C%20Sector%20V%2C%20Bidhannagar%2C%20Kolkata%2C%20West%20Bengal%20700091!5e1!3m2!1sen!2sin!4v1776840905282!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3509.850985682433!2d88.4298909!3d22.57356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275afb2b1cef1%3A0x181dda8377acf1d9!2sEn-9%20Roys%20It%20Park%2C%20EN%20Block%2C%20Sector%20V%2C%20Bidhannagar%2C%20Kolkata%2C%20West%20Bengal%20700091!5e1!3m2!1sen!2sin!4v1776840905282!5m2!1sen!2sin"
+           width="100%"
+  height="400"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full rounded-xl shadow-sm"></iframe>
+          </div> */}
         <div className="bg-blue-600 rounded-2xl p-10 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">
             Ready to Build Your Future?
