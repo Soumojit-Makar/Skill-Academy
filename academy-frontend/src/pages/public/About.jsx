@@ -2,6 +2,41 @@
 import { Link } from "react-router-dom";
 import ABOUT from "../../assates/about.png";
 import Mission from "../../assates/mission.png";
+import Atanu from '../../assates/A.png'
+import Rimi from '../../assates/rimi.jpeg'
+import Soumojit from '../../assates/soumojit.png'
+import Suvosree from '../../assates/suvosree.png'
+const team = [
+  {
+    index: 1,
+    name: "Atanu M.",
+    role: "Center Head",
+    img: Atanu,
+    bio: "Provides strategic leadership and oversees overall operations, driving business growth, organizational excellence, and high-impact GIS & IT solutions across multiple domains.",
+  },
+  {
+    index: 2,
+    name: "Rimi B.",
+    role: "HR Manager",
+    img: Rimi,
+    bio: "Leads talent acquisition, employee engagement, and organizational development initiatives, fostering a high-performance culture aligned with business goals.",
+  },
+  {
+    index: 3,
+    name: "Soumojit M.",
+    role: "IT Officer",
+    img: Soumojit,
+    bio: "Manages IT infrastructure, system security, and enterprise applications, ensuring seamless digital operations and scalable technology solutions.",
+  },
+  {
+    index: 4,
+    name: "Suvosree R.",
+    role: "Training Officer",
+    img: Suvosree,
+    bio: "Designs and delivers industry-focused training programs, empowering learners with practical skills in GIS, IT, and emerging technologies.",
+  }
+];
+
 export default function About() {
   return (
     <div>
@@ -86,36 +121,42 @@ export default function About() {
         </div>
         <div>
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Our Core Values
+            Our Core Team
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "🎯",
-                title: "Career First",
-                desc: "Every decision we make puts student career outcomes first.",
-              },
-              {
-                icon: "🔬",
-                title: "Practical Learning",
-                desc: "Real projects, real tools, real industry exposure.",
-              },
-              {
-                icon: "🤝",
-                title: "Lifetime Support",
-                desc: "We stay with you even after course completion.",
-              },
-            ].map((v) => (
-              <div
-                key={v.title}
-                className="text-center p-6 border border-gray-100 rounded-xl"
-              >
-                <div className="text-4xl mb-3">{v.icon}</div>
-                <h3 className="font-semibold text-gray-900 mb-2">{v.title}</h3>
-                <p className="text-gray-500 text-sm">{v.desc}</p>
-              </div>
-            ))}
+         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {team.map(({ name, role, bio, img ,index}) => (
+        <div
+          key={index}
+          className="group relative rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300"
+        >
+          {/* IMAGE / AVATAR */}
+          {img ? (
+            <img
+              src={img}
+              alt={name}
+              className="w-60 h-48 object-cover group-hover:scale-110 transition duration-500"
+            />
+          ) : (
+            <div className=" h-auto flex items-center justify-center bg-brand-500 text-white text-4xl font-bold">
+              {name.charAt(0)}
+            </div>
+          )}
+
+          {/* OVERLAY (HOVER) */}
+          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center px-4 text-white">
+            <h3 className="text-white font-semibold text-lg mb-1">
+              {name}
+            </h3>
+            <p className="text-brand-300 text-xs font-semibold mb-2">
+              {role}
+            </p>
+            <p className="text-white/80 text-xs leading-relaxed">
+              {bio}
+            </p>
           </div>
+        </div>
+      ))}
+    </div>
         </div>
         {/* <div>
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">

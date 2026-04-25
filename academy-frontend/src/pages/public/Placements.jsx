@@ -38,6 +38,13 @@ import StartUpindian from "../../assates/Startupindian.png";
 import TCS from "../../assates/TCS.png";
 import TechMahindra from "../../assates/tech-mahindra.png";
 import Wipro from "../../assates/Wipro-logo.png";
+import Place from '../../assates/place.jpeg'
+import AMIT from '../../assates/amit.png'
+import Priya from '../../assates/priya.png'
+import Rahul from '../../assates/rahul.png'
+import Arjun from '../../assates/Arjun.jpg'
+import Sneha from '../../assates/sneha.jpg'
+import Neha from '../../assates/Neha.png'
 const HERO_IMAGES = [
   {
     image: Accenture,
@@ -143,44 +150,49 @@ const HERO_IMAGES = [
   },
 ];
 const PLACED = [
-  { name: 'Amit Sharma', role: 'Software Engineer', company: 'TCS', location: 'Kolkata', package: '6.5 LPA', course: 'Full Stack Development' },
-  { name: 'Priya Verma', role: 'Frontend Developer', company: 'Infosys', location: 'Bangalore', package: '7.2 LPA', course: 'Web Development' },
-  { name: 'Rahul Das', role: 'Backend Developer', company: 'Wipro', location: 'Hyderabad', package: '6.8 LPA', course: 'Java Full Stack' },
-  { name: 'Sneha Roy', role: 'UI/UX Designer', company: 'Accenture', location: 'Pune', package: '8.5 LPA', course: 'UI/UX Design' },
-  { name: 'Arjun Mehta', role: 'Cloud Engineer', company: 'HCL', location: 'Noida', package: '9.2 LPA', course: 'AWS Cloud' },
-  { name: 'Neha Singh', role: 'Data Analyst', company: 'Capgemini', location: 'Mumbai', package: '7.8 LPA', course: 'Data Analytics' },
+  { name: 'Amit Sharma', role: 'Software Engineer', company: 'TCS', location: 'Kolkata', package: '6.5 LPA', course: 'Full Stack Development' , image:AMIT},
+  { name: 'Priya Verma', role: 'Frontend Developer', company: 'Infosys', location: 'Bangalore', package: '7.2 LPA', course: 'Web Development',image:Priya },
+  { name: 'Rahul Das', role: 'Backend Developer', company: 'Wipro', location: 'Hyderabad', package: '6.8 LPA', course: 'Java Full Stack',image:Rahul },
+  { name: 'Sneha Roy', role: 'UI/UX Designer', company: 'Accenture', location: 'Pune', package: '8.5 LPA', course: 'UI/UX Design', image:Sneha },
+  { name: 'Arjun Mehta', role: 'Cloud Engineer', company: 'HCL', location: 'Noida', package: '9.2 LPA', course: 'AWS Cloud',image:Arjun },
+  { name: 'Neha Singh', role: 'Data Analyst', company: 'Capgemini', location: 'Mumbai', package: '7.8 LPA', course: 'Data Analytics',image:Neha },
+  
   { name: 'Karan Gupta', role: 'DevOps Engineer', company: 'Cognizant', location: 'Chennai', package: '10 LPA', course: 'DevOps' },
   { name: 'Anjali Patel', role: 'AI Engineer', company: 'IBM', location: 'Bangalore', package: '12 LPA', course: 'AI & ML' },
   { name: 'Rohit Kumar', role: 'Business Analyst', company: 'Deloitte', location: 'Gurgaon', package: '8 LPA', course: 'Business Analysis' },
   { name: 'Meera Nair', role: 'Cybersecurity Analyst', company: 'EY', location: 'Hyderabad', package: '9.5 LPA', course: 'Cybersecurity' },
-
   { name: 'Vikas Yadav', role: 'Full Stack Developer', company: 'JPMorgan', location: 'Mumbai', package: '14 LPA', course: 'Full Stack Development' },
   { name: 'Pooja Sharma', role: 'Software Engineer', company: 'Microsoft', location: 'Bangalore', package: '18 LPA', course: 'Advanced Programming' },
-  { name: 'Rakesh Gupta', role: 'System Engineer', company: 'Infosys', location: 'Pune', package: '6.3 LPA', course: 'IT Fundamentals' },
-  { name: 'Simran Kaur', role: 'QA Engineer', company: 'Wipro', location: 'Noida', package: '5.8 LPA', course: 'Software Testing' },
-  { name: 'Deepak Singh', role: 'Network Engineer', company: 'Tech Mahindra', location: 'Delhi', package: '6.9 LPA', course: 'Networking' },
+  // { name: 'Rakesh Gupta', role: 'System Engineer', company: 'Infosys', location: 'Pune', package: '6.3 LPA', course: 'IT Fundamentals' },
+  // { name: 'Simran Kaur', role: 'QA Engineer', company: 'Wipro', location: 'Noida', package: '5.8 LPA', course: 'Software Testing' },
+  // { name: 'Deepak Singh', role: 'Network Engineer', company: 'Tech Mahindra', location: 'Delhi', package: '6.9 LPA', course: 'Networking' },
 
-  { name: 'Ankit Jain', role: 'Backend Developer', company: 'Amazon', location: 'Hyderabad', package: '15 LPA', course: 'Backend Development' },
-  { name: 'Riya Sen', role: 'Frontend Developer', company: 'Google', location: 'Bangalore', package: '20 LPA', course: 'Frontend Development' },
-  { name: 'Manish Tiwari', role: 'Cloud Engineer', company: 'Oracle', location: 'Chennai', package: '11 LPA', course: 'Cloud Computing' },
-  { name: 'Kavita Mishra', role: 'Data Scientist', company: 'Flipkart', location: 'Bangalore', package: '13 LPA', course: 'Data Science' },
-  { name: 'Sandeep Roy', role: 'Software Engineer', company: 'Zoho', location: 'Chennai', package: '10.5 LPA', course: 'Full Stack Development' },
+  // { name: 'Ankit Jain', role: 'Backend Developer', company: 'Amazon', location: 'Hyderabad', package: '15 LPA', course: 'Backend Development' },
+  // { name: 'Riya Sen', role: 'Frontend Developer', company: 'Google', location: 'Bangalore', package: '20 LPA', course: 'Frontend Development' },
+  // { name: 'Manish Tiwari', role: 'Cloud Engineer', company: 'Oracle', location: 'Chennai', package: '11 LPA', course: 'Cloud Computing' },
+  // { name: 'Kavita Mishra', role: 'Data Scientist', company: 'Flipkart', location: 'Bangalore', package: '13 LPA', course: 'Data Science' },
+  // { name: 'Sandeep Roy', role: 'Software Engineer', company: 'Zoho', location: 'Chennai', package: '10.5 LPA', course: 'Full Stack Development' },
 
-  { name: 'Pritam Ghosh', role: 'Business Analyst', company: 'HDFC Bank', location: 'Kolkata', package: '7.5 LPA', course: 'Business Analytics' },
-  { name: 'Ayesha Khan', role: 'Finance Analyst', company: 'ICICI Bank', location: 'Mumbai', package: '8.2 LPA', course: 'Finance Management' },
-  { name: 'Rohini Das', role: 'HR Executive', company: 'PwC', location: 'Gurgaon', package: '6.7 LPA', course: 'HR Management' },
-  { name: 'Vivek Mishra', role: 'Consultant', company: 'KPMG', location: 'Bangalore', package: '9 LPA', course: 'Consulting' },
-  { name: 'Nikhil Verma', role: 'Risk Analyst', company: 'HSBC', location: 'Kolkata', package: '8.8 LPA', course: 'Finance & Risk' },
+  // { name: 'Pritam Ghosh', role: 'Business Analyst', company: 'HDFC Bank', location: 'Kolkata', package: '7.5 LPA', course: 'Business Analytics' },
+  // { name: 'Ayesha Khan', role: 'Finance Analyst', company: 'ICICI Bank', location: 'Mumbai', package: '8.2 LPA', course: 'Finance Management' },
+  // { name: 'Rohini Das', role: 'HR Executive', company: 'PwC', location: 'Gurgaon', package: '6.7 LPA', course: 'HR Management' },
+  // { name: 'Vivek Mishra', role: 'Consultant', company: 'KPMG', location: 'Bangalore', package: '9 LPA', course: 'Consulting' },
+  // { name: 'Nikhil Verma', role: 'Risk Analyst', company: 'HSBC', location: 'Kolkata', package: '8.8 LPA', course: 'Finance & Risk' },
 ];
 export default function Placements() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-12 text-center px-4">
-        <h1 className="text-4xl font-bold mb-3">Our Placement Record</h1>
+      <div
+  className="py-12 text-center px-4 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url(${Place})`,
+  }}
+>
+        {/* <h1 className="text-4xl font-bold text-white  mb-3">Our Placement Record</h1> */}
         <p className="text-green-200 text-lg max-w-xl mx-auto">95% of our students land jobs within 3 months of completion.</p>
         <div className="flex justify-center gap-8 mt-10">
           {[['5000+','Students Placed'],['95%','Success Rate'],['₹12 LPA','Highest Package'],['300+','Hiring Partners']].map(([n,l]) => (
-            <div key={l} className="text-center">
+            <div key={l} className="text-center text-white">
               <p className="text-2xl font-bold">{n}</p>
               <p className="text-green-200 text-xs mt-1">{l}</p>
             </div>
@@ -225,27 +237,47 @@ export default function Placements() {
          
         </div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Recent Placements</h2>
-          <div className="grid md:grid-cols-3 gap-5">
-            {PLACED.map(p => (
-              <div key={p.name} className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-sm">
-                    {p.name[0]}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">{p.name}</p>
-                    <p className="text-xs text-gray-400">{p.course}</p>
-                  </div>
-                </div>
-                <p className="font-medium text-gray-800 text-sm">{p.role}</p>
-                <p className="text-gray-400 text-xs mb-2">{p.company}</p>
-                <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded">{p.package}</span>
-              </div>
-            ))}
+       <div>
+  <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+    Recent Placements
+  </h2>
+
+  <div className="grid md:grid-cols-6 gap-2">
+    {PLACED.map((p) => (
+      <div
+        key={p.name}
+        className="relative group rounded-xl overflow-hidden shadow-sm border border-gray-100"
+      >
+        {/* IMAGE OR FALLBACK */}
+        {p.image ? (
+          <img
+            src={p.image}
+            alt={p.name}
+            className="w-full h-64 object-cover"
+          />
+        ) : (
+          <div className="w-full h-64 flex items-center justify-center bg-blue-100 text-blue-700 text-5xl font-bold">
+            {p.name?.charAt(0).toUpperCase()}
           </div>
+        )}
+
+        {/* HOVER DETAILS */}
+        <div className="absolute inset-0 bg-black/70 text-white flex flex-col justify-center items-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-300">
+          
+          <p className="font-semibold text-lg">{p.name}</p>
+          <p className="text-sm text-gray-300">{p.course}</p>
+
+          <p className="font-medium mt-2">{p.role}</p>
+          <p className="text-sm text-gray-300">{p.company}</p>
+
+          <span className="mt-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded">
+            {p.package}
+          </span>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
 
         <div className="bg-blue-600 rounded-2xl p-10 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">Your Success Story Starts Here</h2>
