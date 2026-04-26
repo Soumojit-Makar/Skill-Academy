@@ -4,12 +4,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import {AnimatePresence,motion,useInView} from 'framer-motion'
+import {ChevronRight ,ChevronLeft,ArrowRight} from 'lucide-react'
+import CountUp from "react-countup";
+
 
 import api from "../../api/axios";
 import EnquiryForm from "../../components/forms/EnquiryForm";
 import CourseCard from "../../components/sections/CourseCard";
 import PageLoader from "../../components/ui/PageLoader";
+
+
+// Slider
 import bannerImg from "../../assates/banner.png";
+import Slider1 from '../../assates/skillacademyslider1.png'
+import Slider2 from '../../assates/skillacademyslider.png'
+import Slider3 from '../../assates/skillacademyslider3.png'
+import Slider4 from '../../assates/skillacademyslider4.png'
+
+
 import Career from "../../assates/Career-Oriented.png";
 import Trainers from "../../assates/Experienced-Trainers.png";
 import Courses from "../../assates/Wide-Range-of-Courses.png";
@@ -54,6 +67,8 @@ import TechMahindra from "../../assates/tech-mahindra.png";
 import Wipro from "../../assates/Wipro-logo.png";
 import TSSI from "../../assates/TSSi.png";
 import UTKARSHA_BANGLA from "../../assates/utkarsha-bangla.png";
+
+
 const BENEFITS = [
   {
     icon: Career,
@@ -200,29 +215,101 @@ const ORG_IMAGES = [
     image: UTKARSHA_BANGLA,
   },
 ];
+const heroSlides = [
+  {
+    id: 1,
+    image: bannerImg,
+    title: " Learn New Skills, Build Your Future with",
+    highlight: "Confidence",
+    primaryBtn: "Browse Courses",
+    secondaryBtn: "See Placements",
+    primaryLink: "/courses",
+    secondaryLink: "/placements",
+  },
+  {
+    id:2,
+    image:Slider1,
+    title:"",
+    highlight:"",
+    primaryBtn: "",
+    secondaryBtn: "",
+    primaryLink: "",
+    secondaryLink: "",
+  },
+  {
+    id:3,
+    image:Slider2,
+    title:"",
+    highlight:"",
+    primaryBtn: "",
+    secondaryBtn: "",
+    primaryLink: "",
+    secondaryLink: "",
+  },
+  {
+    id:4,
+    image:Slider3,
+    title:"",
+    highlight:"",
+    primaryBtn: "",
+    secondaryBtn: "",
+    primaryLink: "",
+    secondaryLink: "",
+  },
+  {
+    id:5,
+    image:Slider4,
+    title:"",
+    highlight:"",
+    primaryBtn: "",
+    secondaryBtn: "",
+    primaryLink: "",
+    secondaryLink: "",
+  },
+];
 export default function Home() {
   const [courses, setCourses] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
   const [faqs, setFaqs] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => {
     Promise.all([
       api.get("/courses?limit=8"),
       api.get("/testimonials"),
       api.get("/faqs"),
-    ])
-      .then(([c, t, f]) => {
+    ]).then(([c, t, f]) => {
         setCourses(c.data);
         setTestimonials(t.data);
         setFaqs(f.data);
-      })
-      .catch(() => {})
+      }).catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) {
+ 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const activeSlide = heroSlides[currentSlide];
+ if (loading) {
     return (
       <p className="min-h-screen flex items-center justify-center">
         Loading...
@@ -230,10 +317,121 @@ export default function Home() {
     );
   }
 
+
   return (
     <div>
       {/* ── HERO ── */}
-      <section className="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white overflow-hidden">
+           <section className="relative pt-24 pb-2 md:pb-2 min-h-[520px] flex items-center overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSlide.id}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${activeSlide.image})`,
+            }}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.03 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+
+        {/* Overlay */}
+        {/* Overlay */}
+        <div className="absolute inset-0 z-[1] bg-black/30" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r " />
+
+        {/* Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 md:left-6 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20    transition hover:bg-gray-700"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-5 w-5 text-slate-100 " />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 md:right-6 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20  transition hover:bg-gray-700"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-5 w-5 text-slate-100" />
+        </button>
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSlide.id}
+                initial={{ opacity: 0, y: 26 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.55 }}
+              >
+                {/* <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-md">
+                  {activeSlide.badge}
+                </span> */}
+
+                <h1 className="mb-5 font-display text-4xl md:text-5xl font-bold leading-tight text-white drop-shadow-lg">
+                  {activeSlide.title}
+                  <br />
+                  <span className="text-teal-300">{activeSlide.highlight}</span>
+                </h1>
+
+                {/* <p className="mb-8 max-w-xl text-lg leading-relaxed text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.6)]">
+                  {activeSlide.description}
+                </p> */}
+
+               {activeSlide.primaryBtn && activeSlide.secondaryBtn &&( <div className="mb-10 flex flex-wrap gap-3">
+                  <Link
+                    to={activeSlide.primaryLink}
+                    className="btn-primary px-7 py-3"
+                  >
+                    {activeSlide.primaryBtn} 
+                  </Link>
+
+                  <Link
+                    to={activeSlide.secondaryLink}
+                    className="rounded-xl border border-white/30 bg-white/10 px-7 py-3 text-white transition hover:bg-white/20"
+                  >
+                    {activeSlide.secondaryBtn}
+                  </Link>
+                </div>)}
+
+                {/* <div className="grid grid-cols-2 gap-6 border-t border-white/20 pt-8 sm:grid-cols-4">
+                  {stats.map(({ val, suf, label }) => (
+                    <div key={label}>
+                      <p className="font-display text-3xl font-bold text-white">
+                        <Counter end={val} suffix={suf} />
+                      </p>
+                      <p className="mt-1 text-xs text-white/80">{label}</p>
+                    </div>
+                  ))}
+                </div> */}
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="hidden lg:block" />
+          </div>
+
+          {/* Dots */}
+          <div className="mt-10 flex items-center justify-center gap-3">
+            {heroSlides.map((slide, index) => (
+              <button
+                key={slide.id}
+                onClick={() => goToSlide(index)}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  currentSlide === index
+                    ? "w-10 bg-white"
+                    : "w-3 bg-white/40 hover:bg-white/70"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* <section className="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white overflow-hidden">
         <div
           className="absolute inset-0 opacity-50"
           style={{
@@ -266,7 +464,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── STATS BAR ── */}
       <section className="bg-sky-400 py-4">
