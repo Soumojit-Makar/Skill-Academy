@@ -287,9 +287,9 @@ export default function Home() {
       {/* ── HERO LOWER CAROUSEL ── */}
       <section className="bg-white py-6 mt-6 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          {/* <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Official Training Program Associations
-          </h2>
+          </h2> */}
 
           <Swiper
             modules={[Autoplay, Navigation]}
