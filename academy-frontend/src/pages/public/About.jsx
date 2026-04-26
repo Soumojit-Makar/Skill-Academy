@@ -2,10 +2,11 @@
 import { Link } from "react-router-dom";
 import ABOUT from "../../assates/about.png";
 import Mission from "../../assates/mission.png";
-import Atanu from '../../assates/A.png'
-import Rimi from '../../assates/rimi.jpeg'
-import Soumojit from '../../assates/soumojit.png'
-import Suvosree from '../../assates/suvosree.png'
+import Atanu from "../../assates/A.png";
+import Rimi from "../../assates/rimi.jpeg";
+import Soumojit from "../../assates/soumojit.png";
+import Suvosree from "../../assates/suvosree.png";
+
 const team = [
   {
     index: 1,
@@ -34,12 +35,13 @@ const team = [
     role: "Training Officer",
     img: Suvosree,
     bio: "Designs and delivers industry-focused training programs, empowering learners with practical skills in GIS, IT, and emerging technologies.",
-  }
+  },
 ];
 
 export default function About() {
   return (
     <div>
+      {/* HERO */}
       <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-4">
           About DigitalIndian Skillacademy
@@ -48,8 +50,27 @@ export default function About() {
           Empowering careers through industry-focused IT education since 2014.
         </p>
       </div>
+      {/* 🎥 YOUTUBE VIDEO SECTION */}
+      <div>
+        <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">
+          Our Training Overview
+        </h2>
+
+        <div className="relative w-full max-w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.youtube.com/embed/wMLLPUOw_ro"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="absolute top-0 left-0 w-full h-full"
+          ></iframe>
+        </div>
+      </div>
       <div className="max-w-5xl mx-auto px-4 py-16 space-y-16">
+        {/* ABOUT + MISSION */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* ABOUT */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">About Us</h2>
             <div className="w-full h-64 mb-6">
@@ -71,6 +92,8 @@ export default function About() {
               digital economy.
             </p>
           </div>
+
+          {/* MISSION */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Our Mission
@@ -95,6 +118,7 @@ export default function About() {
             </p>
           </div>
 
+          {/* HIGHLIGHTS */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Key Highlights
@@ -105,6 +129,8 @@ export default function About() {
               Experienced industry trainers Recognized certification programs
             </p>
           </div>
+
+          {/* STATS */}
           <div className="grid grid-cols-2 gap-4">
             {[
               ["5000+", "Students Trained"],
@@ -119,58 +145,44 @@ export default function About() {
             ))}
           </div>
         </div>
+
+        {/* TEAM */}
         <div>
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Our Core Team
           </h2>
-         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {team.map(({ name, role, bio, img ,index}) => (
-        <div
-          key={index}
-          className="group relative rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300"
-        >
-          {/* IMAGE / AVATAR */}
-          {img ? (
-            <img
-              src={img}
-              alt={name}
-              className="w-60 h-48 object-cover group-hover:scale-110 transition duration-500"
-            />
-          ) : (
-            <div className=" h-auto flex items-center justify-center bg-brand-500 text-white text-4xl font-bold">
-              {name.charAt(0)}
-            </div>
-          )}
 
-          {/* OVERLAY (HOVER) */}
-          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center px-4 text-white">
-            <h3 className="text-white font-semibold text-lg mb-1">
-              {name}
-            </h3>
-            <p className="text-brand-300 text-xs font-semibold mb-2">
-              {role}
-            </p>
-            <p className="text-white/80 text-xs leading-relaxed">
-              {bio}
-            </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map(({ name, role, bio, img, index }) => (
+              <div
+                key={index}
+                className="group relative rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300"
+              >
+                {img ? (
+                  <img
+                    src={img}
+                    alt={name}
+                    className="w-60 h-48 object-cover group-hover:scale-110 transition duration-500"
+                  />
+                ) : (
+                  <div className="h-48 flex items-center justify-center bg-blue-500 text-white text-4xl font-bold">
+                    {name.charAt(0)}
+                  </div>
+                )}
+
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center px-4 text-white">
+                  <h3 className="font-semibold text-lg mb-1">{name}</h3>
+                  <p className="text-blue-300 text-xs font-semibold mb-2">
+                    {role}
+                  </p>
+                  <p className="text-white/80 text-xs leading-relaxed">{bio}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-        </div>
-        {/* <div>
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Our Location
-          </h2>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3509.850985682433!2d88.4298909!3d22.57356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275afb2b1cef1%3A0x181dda8377acf1d9!2sEn-9%20Roys%20It%20Park%2C%20EN%20Block%2C%20Sector%20V%2C%20Bidhannagar%2C%20Kolkata%2C%20West%20Bengal%20700091!5e1!3m2!1sen!2sin!4v1776840905282!5m2!1sen!2sin"
-           width="100%"
-  height="400"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  className="w-full rounded-xl shadow-sm"></iframe>
-          </div> */}
+
+        {/* CTA */}
         <div className="bg-blue-600 rounded-2xl p-10 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">
             Ready to Build Your Future?

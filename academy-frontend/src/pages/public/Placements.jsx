@@ -45,6 +45,13 @@ import Rahul from '../../assates/rahul.png'
 import Arjun from '../../assates/Arjun.jpg'
 import Sneha from '../../assates/sneha.jpg'
 import Neha from '../../assates/Neha.png'
+import Karan from '../../assates/Karan-Gupta.png'
+import Meera from '../../assates/Meera-Nair.png'
+import Patel from '../../assates/Patel.png'
+import Pooja from '../../assates/Pooja-Sharma.png'
+import Rohit from '../../assates/Rohit-Kumar.png'
+import Vikas from '../../assates/Vikas-Yadav.png'
+import Anjali from '../../assates/Anjali-Patel.png'
 const HERO_IMAGES = [
   {
     image: Accenture,
@@ -157,12 +164,12 @@ const PLACED = [
   { name: 'Arjun Mehta', role: 'Cloud Engineer', company: 'HCL', location: 'Noida', package: '9.2 LPA', course: 'AWS Cloud',image:Arjun },
   { name: 'Neha Singh', role: 'Data Analyst', company: 'Capgemini', location: 'Mumbai', package: '7.8 LPA', course: 'Data Analytics',image:Neha },
   
-  { name: 'Karan Gupta', role: 'DevOps Engineer', company: 'Cognizant', location: 'Chennai', package: '10 LPA', course: 'DevOps' },
-  { name: 'Anjali Patel', role: 'AI Engineer', company: 'IBM', location: 'Bangalore', package: '12 LPA', course: 'AI & ML' },
-  { name: 'Rohit Kumar', role: 'Business Analyst', company: 'Deloitte', location: 'Gurgaon', package: '8 LPA', course: 'Business Analysis' },
-  { name: 'Meera Nair', role: 'Cybersecurity Analyst', company: 'EY', location: 'Hyderabad', package: '9.5 LPA', course: 'Cybersecurity' },
-  { name: 'Vikas Yadav', role: 'Full Stack Developer', company: 'JPMorgan', location: 'Mumbai', package: '14 LPA', course: 'Full Stack Development' },
-  { name: 'Pooja Sharma', role: 'Software Engineer', company: 'Microsoft', location: 'Bangalore', package: '18 LPA', course: 'Advanced Programming' },
+  { name: 'Karan Gupta', role: 'DevOps Engineer', company: 'Cognizant', location: 'Chennai', package: '10 LPA', course: 'DevOps',image:Karan },
+  { name: 'Anjali Patel', role: 'AI Engineer', company: 'IBM', location: 'Bangalore', package: '12 LPA', course: 'AI & ML',image:Anjali },
+  { name: 'Rohit Kumar', role: 'Business Analyst', company: 'Deloitte', location: 'Gurgaon', package: '8 LPA', course: 'Business Analysis',image:Rohit },
+  { name: 'Meera Nair', role: 'Cybersecurity Analyst', company: 'EY', location: 'Hyderabad', package: '9.5 LPA', course: 'Cybersecurity',image:Meera },
+  { name: 'Vikas Yadav', role: 'Full Stack Developer', company: 'JPMorgan', location: 'Mumbai', package: '14 LPA', course: 'Full Stack Development',image:Vikas },
+  { name: 'Pooja Sharma', role: 'Software Engineer', company: 'Microsoft', location: 'Bangalore', package: '18 LPA', course: 'Advanced Programming',image:Pooja },
   // { name: 'Rakesh Gupta', role: 'System Engineer', company: 'Infosys', location: 'Pune', package: '6.3 LPA', course: 'IT Fundamentals' },
   // { name: 'Simran Kaur', role: 'QA Engineer', company: 'Wipro', location: 'Noida', package: '5.8 LPA', course: 'Software Testing' },
   // { name: 'Deepak Singh', role: 'Network Engineer', company: 'Tech Mahindra', location: 'Delhi', package: '6.9 LPA', course: 'Networking' },
