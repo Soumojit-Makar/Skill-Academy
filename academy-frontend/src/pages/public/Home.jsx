@@ -52,7 +52,8 @@ import StartUpindian from "../../assates/Startupindian.png";
 import TCS from "../../assates/TCS.png";
 import TechMahindra from "../../assates/tech-mahindra.png";
 import Wipro from "../../assates/Wipro-logo.png";
-
+import TSSI from "../../assates/TSSi.png";
+import UTKARSHA_BANGLA from "../../assates/utkarsha-bangla.png";
 const BENEFITS = [
   {
     icon: Career,
@@ -94,14 +95,9 @@ const HERO_IMAGES = [
     image: Amazon,
   },
   {
-    image: Assocham,
-  },
-  {
     image: Capgemini,
   },
-  {
-    image: CII,
-  },
+
   {
     image: Cognizant,
   },
@@ -128,12 +124,6 @@ const HERO_IMAGES = [
   },
   {
     image: Wipro,
-  },
-  {
-    image: NASSCOM,
-  },
-  {
-    image: SkillIndia,
   },
   {
     image: StartUpindian,
@@ -190,7 +180,26 @@ const HERO_IMAGES = [
     image: TechMahindra,
   },
 ];
-
+const ORG_IMAGES = [
+  {
+    image: Assocham,
+  },
+  {
+    image: CII,
+  },
+  {
+    image: NASSCOM,
+  },
+  {
+    image: SkillIndia,
+  },
+  {
+    image: TSSI,
+  },
+  {
+    image: UTKARSHA_BANGLA,
+  },
+];
 export default function Home() {
   const [courses, setCourses] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
@@ -275,7 +284,49 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* ── HERO LOWER CAROUSEL ── */}
+      <section className="bg-white py-6 mt-6 relative z-10">
+  <div className="max-w-7xl mx-auto px-4">
+    
+    <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+      Our Students Are Placed In
+    </h2>
 
+    <Swiper
+      modules={[Autoplay, Navigation]}
+      spaceBetween={20}
+      slidesPerView={1}
+      loop={true}
+      navigation={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      breakpoints={{
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 5 },
+      }}
+      className="academyHeroSwiper"
+    >
+      {HERO_IMAGES.map((item, index) => (
+        <SwiperSlide key={index} className="flex justify-center">
+          
+          <div className="w-full max-w-[180px] h-[100px] flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+            
+            <img
+              src={item.image}
+              alt={"IMG-" + index}
+              className="max-h-[70px] max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
+            />
+
+          </div>
+
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+  </div>
+</section>
       {/* ── COURSES ── */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
@@ -426,7 +477,9 @@ export default function Home() {
       {/* ── HERO LOWER CAROUSEL ── */}
       <section className="bg-white py-2 -mt-6 relative z-10">
         <div className="max-h-1/2 mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Students Are Placed In</h2>
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Our Students Are Placed In
+          </h2>
           <Swiper
             modules={[Autoplay, Navigation]}
             spaceBetween={15}
