@@ -286,47 +286,41 @@ export default function Home() {
       </section>
       {/* ── HERO LOWER CAROUSEL ── */}
       <section className="bg-white py-6 mt-6 relative z-10">
-  <div className="max-w-7xl mx-auto px-4">
-    
-    <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-      Our Students Are Placed In
-    </h2>
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Official Training Program Associations
+          </h2>
 
-    <Swiper
-      modules={[Autoplay, Navigation]}
-      spaceBetween={20}
-      slidesPerView={1}
-      loop={true}
-      navigation={true}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-      breakpoints={{
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 5 },
-      }}
-      className="academyHeroSwiper"
-    >
-      {HERO_IMAGES.map((item, index) => (
-        <SwiperSlide key={index} className="flex justify-center">
-          
-          <div className="w-full max-w-[180px] h-[100px] flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
-            
-            <img
-              src={item.image}
-              alt={"IMG-" + index}
-              className="max-h-[70px] max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
-            />
-
-          </div>
-
-        </SwiperSlide>
-      ))}
-    </Swiper>
-
-  </div>
-</section>
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop={true}
+            navigation={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 5 },
+            }}
+            className="academyHeroSwiper"
+          >
+            {ORG_IMAGES.map((item, index) => (
+              <SwiperSlide key={index} className="flex justify-center">
+                <div className="w-full max-w-[180px] h-[100px] flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                  <img
+                    src={item.image}
+                    alt={"IMG-" + index}
+                    className="max-h-[70px] max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
       {/* ── COURSES ── */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
@@ -475,43 +469,48 @@ export default function Home() {
         </section>
       )}
       {/* ── HERO LOWER CAROUSEL ── */}
-      <section className="bg-white py-2 -mt-6 relative z-10">
-        <div className="max-h-1/2 mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Our Students Are Placed In
-          </h2>
-          <Swiper
-            modules={[Autoplay, Navigation]}
-            spaceBetween={15}
-            slidesPerView={1}
-            loop={true}
-            navigation={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 12 },
-            }}
-            className="academyHeroSwiper"
-          >
-            {HERO_IMAGES.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div className="group rounded-xl overflow-hidden bg-white   shadow-sm hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-45 md:h-45 overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={"IMG-" + index}
-                      className="w-full h-full object-fill group-hover:scale-105 transition duration-500"
-                    />
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
+      <section className="bg-white py-6 mt-6 relative z-10">
+  <div className="max-w-7xl mx-auto px-4">
+    
+    <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+      Our Students Are Placed In
+    </h2>
+
+    <Swiper
+      modules={[Autoplay, Navigation]}
+      spaceBetween={20}
+      slidesPerView={1}
+      loop={true}
+      navigation={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      breakpoints={{
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 5 },
+      }}
+      className="academyHeroSwiper"
+    >
+      {HERO_IMAGES.map((item, index) => (
+        <SwiperSlide key={index} className="flex justify-center">
+          
+          <div className="w-full max-w-[180px] h-[100px] flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+            
+            <img
+              src={item.image}
+              alt={"IMG-" + index}
+              className="max-h-[70px] max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
+            />
+
+          </div>
+
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+  </div>
+</section>
       {/* ── CTA BANNER ── */}
       <section className="bg-gradient-to-r from-sky-300 to-sky-400 py-4 text-gray-800 text-center">
         <h2 className="text-3xl font-bold mb-3">
