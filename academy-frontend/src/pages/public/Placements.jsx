@@ -190,7 +190,7 @@ export default function Placements() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div
-  className="py-12 text-center px-4 bg-cover bg-center bg-no-repeat"
+  className="py-32 text-center px-4 bg-cover bg-center bg-no-repeat"
   style={{
     backgroundImage: `url(${Place})`,
   }}

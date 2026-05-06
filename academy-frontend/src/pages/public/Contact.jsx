@@ -1,11 +1,18 @@
 import EnquiryForm from "../../components/forms/EnquiryForm";
 import { Mail, Phone, MapIcon } from "lucide-react";
+import ContactImg from "../../assates/contact.png";
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50 pb-4">
-      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-12 text-center px-4">
+      <div className=" text-gray-800 py-20 text-center px-4"
+        style={{
+          backgroundImage: `url(${ContactImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <h1 className="text-4xl font-bold mb-3">Contact Us</h1>
-        <p className="text-blue-200">We'd love to hear from you. Let's talk!</p>
+        <p className="text-gray-900">We'd love to hear from you. Let's talk!</p>
       </div>
       <div className="max-w-5xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10">
         <div>

@@ -6,7 +6,7 @@ import Atanu from "../../assates/A.png";
 import Rimi from "../../assates/rimi.jpeg";
 import Soumojit from "../../assates/soumojit.png";
 import Suvosree from "../../assates/suvosree.png";
-
+import AboutImg from "../../assates/education.png";
 const team = [
   {
     index: 1,
@@ -42,11 +42,18 @@ export default function About() {
   return (
     <div>
       {/* HERO */}
-      <div className="bg-gradient-to-r from-sky-900 to-blue-500 text-white py-12 text-center px-4">
+      <div className=" text-gray-800 py-12 text-center px-4"
+      
+      style={{
+        backgroundImage: `url(${AboutImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+        >
         <h1 className="text-4xl font-bold mb-4">
           About DigitalIndian Skillacademy
         </h1>
-        <p className="text-blue-200 max-w-xl mx-auto text-lg">
+        <p className="text-gray-900 max-w-xl mx-auto text-lg">
           Empowering careers through industry-focused IT education since 2014.
         </p>
       </div>
