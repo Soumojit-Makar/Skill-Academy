@@ -157,19 +157,19 @@ const HERO_IMAGES = [
   },
 ];
 const PLACED = [
-  { name: 'Amit Sharma', role: 'Software Engineer', company: 'TCS', location: 'Kolkata', package: '6.5 LPA', course: 'Full Stack Development' , image:AMIT},
-  { name: 'Priya Verma', role: 'Frontend Developer', company: 'Infosys', location: 'Bangalore', package: '7.2 LPA', course: 'Web Development',image:Priya },
-  { name: 'Rahul Das', role: 'Backend Developer', company: 'Wipro', location: 'Hyderabad', package: '6.8 LPA', course: 'Java Full Stack',image:Rahul },
-  { name: 'Sneha Roy', role: 'UI/UX Designer', company: 'Accenture', location: 'Pune', package: '8.5 LPA', course: 'UI/UX Design', image:Sneha },
-  { name: 'Arjun Mehta', role: 'Cloud Engineer', company: 'HCL', location: 'Noida', package: '9.2 LPA', course: 'AWS Cloud',image:Arjun },
-  { name: 'Neha Singh', role: 'Data Analyst', company: 'Capgemini', location: 'Mumbai', package: '7.8 LPA', course: 'Data Analytics',image:Neha },
-  
-  { name: 'Karan Gupta', role: 'DevOps Engineer', company: 'Cognizant', location: 'Chennai', package: '10 LPA', course: 'DevOps',image:Karan },
-  { name: 'Anjali Patel', role: 'AI Engineer', company: 'IBM', location: 'Bangalore', package: '12 LPA', course: 'AI & ML',image:Anjali },
-  { name: 'Rohit Kumar', role: 'Business Analyst', company: 'Deloitte', location: 'Gurgaon', package: '8 LPA', course: 'Business Analysis',image:Rohit },
-  { name: 'Meera Nair', role: 'Cybersecurity Analyst', company: 'EY', location: 'Hyderabad', package: '9.5 LPA', course: 'Cybersecurity',image:Meera },
-  { name: 'Vikas Yadav', role: 'Full Stack Developer', company: 'JPMorgan', location: 'Mumbai', package: '14 LPA', course: 'Full Stack Development',image:Vikas },
-  { name: 'Pooja Sharma', role: 'Software Engineer', company: 'Microsoft', location: 'Bangalore', package: '18 LPA', course: 'Advanced Programming',image:Pooja },
+  { name: 'Amit Sharma', role: 'Software Engineer', company: 'TCS', location: 'Kolkata', package: '6.5 LPA', course: 'Full Stack Development', image: AMIT },
+  { name: 'Priya Verma', role: 'Frontend Developer', company: 'Infosys', location: 'Bangalore', package: '7.2 LPA', course: 'Web Development', image: Priya },
+  { name: 'Rahul Das', role: 'Backend Developer', company: 'Wipro', location: 'Hyderabad', package: '6.8 LPA', course: 'Java Full Stack', image: Rahul },
+  { name: 'Sneha Roy', role: 'UI/UX Designer', company: 'Accenture', location: 'Pune', package: '8.5 LPA', course: 'UI/UX Design', image: Sneha },
+  { name: 'Arjun Mehta', role: 'Cloud Engineer', company: 'HCL', location: 'Noida', package: '9.2 LPA', course: 'AWS Cloud', image: Arjun },
+  { name: 'Neha Singh', role: 'Data Analyst', company: 'Capgemini', location: 'Mumbai', package: '7.8 LPA', course: 'Data Analytics', image: Neha },
+
+  { name: 'Karan Gupta', role: 'DevOps Engineer', company: 'Cognizant', location: 'Chennai', package: '10 LPA', course: 'DevOps', image: Karan },
+  { name: 'Anjali Patel', role: 'AI Engineer', company: 'IBM', location: 'Bangalore', package: '12 LPA', course: 'AI & ML', image: Anjali },
+  { name: 'Rohit Kumar', role: 'Business Analyst', company: 'Deloitte', location: 'Gurgaon', package: '8 LPA', course: 'Business Analysis', image: Rohit },
+  { name: 'Meera Nair', role: 'Cybersecurity Analyst', company: 'EY', location: 'Hyderabad', package: '9.5 LPA', course: 'Cybersecurity', image: Meera },
+  { name: 'Vikas Yadav', role: 'Full Stack Developer', company: 'JPMorgan', location: 'Mumbai', package: '14 LPA', course: 'Full Stack Development', image: Vikas },
+  { name: 'Pooja Sharma', role: 'Software Engineer', company: 'Microsoft', location: 'Bangalore', package: '18 LPA', course: 'Advanced Programming', image: Pooja },
   // { name: 'Rakesh Gupta', role: 'System Engineer', company: 'Infosys', location: 'Pune', package: '6.3 LPA', course: 'IT Fundamentals' },
   // { name: 'Simran Kaur', role: 'QA Engineer', company: 'Wipro', location: 'Noida', package: '5.8 LPA', course: 'Software Testing' },
   // { name: 'Deepak Singh', role: 'Network Engineer', company: 'Tech Mahindra', location: 'Delhi', package: '6.9 LPA', course: 'Networking' },
@@ -186,19 +186,73 @@ const PLACED = [
   // { name: 'Vivek Mishra', role: 'Consultant', company: 'KPMG', location: 'Bangalore', package: '9 LPA', course: 'Consulting' },
   // { name: 'Nikhil Verma', role: 'Risk Analyst', company: 'HSBC', location: 'Kolkata', package: '8.8 LPA', course: 'Finance & Risk' },
 ];
+const LIVE_PROJECTS = [
+  {
+    name: "Bengal Creations",
+    category: "Multi-Vendor E-commerce",
+    tech: ["React", "Node.js", "MongoDB", "Express", "Razorpay"],
+    status: "Live Project",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "A production-level multi-vendor e-commerce platform where multiple sellers can manage products, orders, payments, and customers. Integrated UPI/Razorpay payment gateway, vendor dashboard, authentication, and order tracking system.",
+  },
+
+  {
+    name: "Tiffin Hub",
+    category: "Food Delivery Platform",
+    tech: ["Java", "Spring Boot", "FastAPI", "Node.js", "Microservices"],
+    status: "Enterprise Architecture",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "A scalable food delivery and tiffin booking platform developed using microservice architecture. Includes authentication service, restaurant management, delivery tracking, API gateway, and real-time order processing.",
+  },
+
+
+
+  {
+    name: "AI Chatbot Assistant",
+    category: "Artificial Intelligence",
+    tech: ["Python", "TensorFlow", "NLP"],
+    status: "AI Powered",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "AI-powered chatbot capable of understanding natural language queries and providing intelligent responses using machine learning and NLP models.",
+  },
+
+  {
+    name: "Real-Time Chat Application",
+    category: "Communication Platform",
+    tech: ["Socket.io", "React", "Express"],
+    status: "Realtime System",
+    image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "A real-time messaging platform with instant chat, group rooms, typing indicators, online users, and secure authentication system.",
+  },
+
+  {
+    name: "GIS Data Dashboard",
+    category: "GIS & Analytics",
+    tech: ["Mapbox", "React", "Node.js"],
+    status: "GeoSpatial Project",
+    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "Interactive GIS dashboard for visualizing geospatial datasets, maps, layers, and analytics for infrastructure and land management projects.",
+  },
+];
+
 export default function Placements() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div
-  className="py-32 text-center px-4 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: `url(${Place})`,
-  }}
->
+        className="py-32 text-center px-4 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${Place})`,
+        }}
+      >
         {/* <h1 className="text-4xl font-bold text-white  mb-3">Our Placement Record</h1> */}
         <p className="text-green-200 text-lg max-w-xl mx-auto">95% of our students land jobs within 3 months of completion.</p>
         <div className="flex justify-center gap-8 mt-10">
-          {[['5000+','Students Placed'],['95%','Success Rate'],['₹12 LPA','Highest Package'],['300+','Hiring Partners']].map(([n,l]) => (
+          {[['5000+', 'Students Placed'], ['95%', 'Success Rate'], ['₹12 LPA', 'Highest Package'], ['300+', 'Hiring Partners']].map(([n, l]) => (
             <div key={l} className="text-center text-white">
               <p className="text-2xl font-bold">{n}</p>
               <p className="text-green-200 text-xs mt-1">{l}</p>
@@ -210,8 +264,8 @@ export default function Placements() {
       <div className="max-w-6xl mx-auto px-4 py-16 space-y-16">
         <div>
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Students Are Placed In</h2>
-          
-            <Swiper
+
+          <Swiper
             modules={[Autoplay, Navigation]}
             spaceBetween={15}
             slidesPerView={1}
@@ -241,51 +295,103 @@ export default function Placements() {
               </SwiperSlide>
             ))}
           </Swiper>
-         
+
         </div>
 
-       <div>
-  <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-    Recent Placements
-  </h2>
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Recent Placements
+          </h2>
 
-  <div className="grid md:grid-cols-6 gap-2">
-    {PLACED.map((p) => (
-      <div
-        key={p.name}
-        className="relative group rounded-xl overflow-hidden shadow-sm border border-gray-100"
-      >
-        {/* IMAGE OR FALLBACK */}
-        {p.image ? (
-          <img
-            src={p.image}
-            alt={p.name}
-            className="w-full h-64 object-cover"
-          />
-        ) : (
-          <div className="w-full h-64 flex items-center justify-center bg-blue-100 text-blue-700 text-5xl font-bold">
-            {p.name?.charAt(0).toUpperCase()}
+          <div className="grid md:grid-cols-6 gap-2">
+            {PLACED.map((p) => (
+              <div
+                key={p.name}
+                className="relative group rounded-xl overflow-hidden shadow-sm border border-gray-100"
+              >
+                {/* IMAGE OR FALLBACK */}
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-64 object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-64 flex items-center justify-center bg-blue-100 text-blue-700 text-5xl font-bold">
+                    {p.name?.charAt(0).toUpperCase()}
+                  </div>
+                )}
+
+                {/* HOVER DETAILS */}
+                <div className="absolute inset-0 bg-black/70 text-white flex flex-col justify-center items-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                  <p className="font-semibold text-lg">{p.name}</p>
+                  <p className="text-sm text-gray-300">{p.course}</p>
+
+                  <p className="font-medium mt-2">{p.role}</p>
+                  <p className="text-sm text-gray-300">{p.company}</p>
+
+                  <span className="mt-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded">
+                    {p.package}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
-        )}
-
-        {/* HOVER DETAILS */}
-        <div className="absolute inset-0 bg-black/70 text-white flex flex-col justify-center items-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-300">
-          
-          <p className="font-semibold text-lg">{p.name}</p>
-          <p className="text-sm text-gray-300">{p.course}</p>
-
-          <p className="font-medium mt-2">{p.role}</p>
-          <p className="text-sm text-gray-300">{p.company}</p>
-
-          <span className="mt-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded">
-            {p.package}
-          </span>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
+        <div className=" mx-auto mt-16">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
+            Our Student Live Projrcts
+          </h2>
+          <p className="text-gray-700 text-center">
+            Our students work on real-world projects during their courses, giving them hands-on experience and a strong portfolio to showcase to employers.
+          </p>
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {LIVE_PROJECTS.map((project) => (
+              <div
+                key={project.name}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-52 object-cover group-hover:scale-105 transition duration-500"
+                  />
 
+                  <span className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    {project.status}
+                  </span>
+                </div>
+
+                <div className="p-5">
+                  <p className="text-sm text-blue-600 font-medium">
+                    {project.category}
+                  </p>
+
+                  <h3 className="text-xl font-bold text-gray-900 mt-1">
+                    {project.name}
+                  </h3>
+
+                  <p className="text-gray-600 text-sm mt-3 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="bg-blue-600 rounded-2xl p-10 text-white text-center">
           <h2 className="text-2xl font-bold mb-3">Your Success Story Starts Here</h2>
           <p className="text-blue-100 mb-6">Enroll in a course and let our placement team do the rest.</p>
@@ -294,6 +400,7 @@ export default function Placements() {
           </Link>
         </div>
       </div>
+
     </div>
   )
 }
