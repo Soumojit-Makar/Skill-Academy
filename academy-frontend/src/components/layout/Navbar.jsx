@@ -47,6 +47,9 @@ export default function Navbar() {
               </NavLink>
             );
           })}
+          <a href="https://lms.digitalindian.org" className="btn-primary text-xs">
+            Login
+          </a>
         </div>
 
         {/* <div className="hidden md:flex items-center gap-3">

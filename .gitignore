@@ -11,3 +11,12 @@ coverage
 *.ntvs*
 *.env.*
 *.local
+*.gitignore
+*/dist
+*/build
+*.tsbuildinfo
+*.cache
+*.eslintcache
+*.prettiercache
+*/.gitignore
+.gitignore
