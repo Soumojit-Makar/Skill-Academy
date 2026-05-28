@@ -76,7 +76,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-3 mt-4 cursor-pointer">
             <a
-              href="#"
+              href="https://www.facebook.com/share/18Vmv2fayS/"
               className="text-xs text-slate-500 hover:text-white transition-colors"
             >
               <FaFacebook size={16} />
