@@ -73,7 +73,7 @@ export default function Blogs() {
             </div>
 
             <iframe
-              src="https://www.education.gov.in/"
+              src="https://news.google.com/rss/search?q=education"
               title="Educational News"
               width="100%"
               height="600"
