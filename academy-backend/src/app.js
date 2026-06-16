@@ -16,8 +16,7 @@ connectDB();
 app.set("trust proxy", 1);
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({
-  origin: "https://www.digitalindian.org"||
-  '*',
+  origin: process.env.FRONTEND_URL || '*',
   credentials: true,
 }));
 const limiter = rateLimit({

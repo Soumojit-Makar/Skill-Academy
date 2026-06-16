@@ -9,8 +9,8 @@ export default function Blogs() {
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState(0)
   const [initialLoad, setInitialLoad] = useState(true)
-  const [news, setNews] = useState([]);
-const [newsLoading, setNewsLoading] = useState(true);
+//   const [news, setNews] = useState([]);
+// const [newsLoading, setNewsLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -19,11 +19,11 @@ const [newsLoading, setNewsLoading] = useState(true);
       .catch(() => { })
       .finally(() => { setLoading(false); setInitialLoad(false) })
       
-    setNewsLoading(true)
-    api.get('/news')
-      .then(r => setNews(r.data))
-      .catch(() => { })
-      .finally(() => setNewsLoading(false));
+    // setNewsLoading(true)
+    // api.get('/news')
+    //   .then(r => setNews(r.data))
+    //   .catch(() => { })
+    //   .finally(() => setNewsLoading(false));
 
   }, [page])
 
@@ -73,7 +73,7 @@ const [newsLoading, setNewsLoading] = useState(true);
           </div>
         )}
        {/* Educational News Section */}
-<div className="mt-16">
+{/* <div className="mt-16">
   <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
     <h2 className="text-2xl font-bold text-gray-800 mb-6">
       Educational News
@@ -114,7 +114,7 @@ const [newsLoading, setNewsLoading] = useState(true);
       </div>
     )}
   </div>
-</div>
+</div> */}
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { login, getMe, seedAdmin } from '../controllers/auth.controller.js';
 import { protect, requireRoles } from '../middleware/auth.middleware.js';
 import { authLimiter, enquiryLimiter } from '../middleware/rateLimiter.middleware.js';
-import { NewsRouter } from './news.js';
+// import { NewsRouter } from './news.js';
 import {
   createEnquiry, listEnquiries, getEnquiry, updateEnquiry,
   deleteEnquiry, exportEnquiries, getDashboard,
@@ -146,5 +146,5 @@ r.put('/admin/settings', adminOnly, async (req, res, next) => {
 });
 
 // News route
-r.use('/news', NewsRouter);
+// r.use('/news', NewsRouter);
 export default r;
