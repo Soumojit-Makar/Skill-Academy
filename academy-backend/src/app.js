@@ -16,7 +16,8 @@ connectDB();
 app.set("trust proxy", 1);
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: 
+  '*',
   credentials: true,
 }));
 const limiter = rateLimit({
