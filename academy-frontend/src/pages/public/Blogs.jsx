@@ -9,13 +9,22 @@ export default function Blogs() {
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState(0)
   const [initialLoad, setInitialLoad] = useState(true)
+  const [news, setNews] = useState([]);
+const [newsLoading, setNewsLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     api.get(`/blogs?page=${page}&limit=9`)
       .then(r => { setBlogs(r.data); setTotal(r.total) })
       .catch(() => { })
       .finally(() => { setLoading(false); setInitialLoad(false) })
+      
+    setNewsLoading(true)
+    api.get('/news')
+      .then(r => setNews(r.data))
+      .catch(() => { })
+      .finally(() => setNewsLoading(false));
+
   }, [page])
 
   if (initialLoad && loading) return <p className="min-h-screen flex items-center justify-center">Loading...</p>
@@ -63,24 +72,49 @@ export default function Blogs() {
             <p>No blog posts yet. Check back soon!</p>
           </div>
         )}
-        {/* Educational News Section */}
-        <div className="mt-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-            <div className="p-4 border-b">
-              <h2 className="text-2xl font-bold text-gray-800">
-                Educational News
-              </h2>
-            </div>
+       {/* Educational News Section */}
+<div className="mt-16">
+  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <h2 className="text-2xl font-bold text-gray-800 mb-6">
+      Educational News
+    </h2>
 
-            <iframe
-              src="https://news.google.com/rss/search?q=education"
-              title="Educational News"
-              width="100%"
-              height="600"
-              style={{ border: "none" }}
-            />
-          </div>
-        </div>
+    {newsLoading ? (
+      <div className="grid md:grid-cols-3 gap-6">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="h-40 bg-gray-100 animate-pulse rounded-lg"
+          />
+        ))}
+      </div>
+    ) : (
+      <div className="grid md:grid-cols-3 gap-6">
+        {news.map((item, index) => (
+          <a
+            key={index}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border rounded-xl p-5 hover:shadow-md transition-all bg-white"
+          >
+            <h3 className="font-semibold text-gray-900 line-clamp-3">
+              {item.title}
+            </h3>
+
+            <p className="text-sm text-gray-500 mt-3 line-clamp-3">
+              {item.content}
+            </p>
+
+            <div className="mt-4 text-xs text-blue-600">
+              {new Date(item.pubDate).toLocaleDateString()}
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</div>
       </div>
     </div>
   )
