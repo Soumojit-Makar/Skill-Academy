@@ -4,17 +4,17 @@ import api from '../../api/axios'
 import PageLoader from '../../components/ui/PageLoader'
 
 export default function Blogs() {
-  const [blogs,   setBlogs]   = useState([])
+  const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true)
-  const [page, setPage]       = useState(1)
-  const [total, setTotal]     = useState(0)
+  const [page, setPage] = useState(1)
+  const [total, setTotal] = useState(0)
   const [initialLoad, setInitialLoad] = useState(true)
 
   useEffect(() => {
     setLoading(true)
     api.get(`/blogs?page=${page}&limit=9`)
       .then(r => { setBlogs(r.data); setTotal(r.total) })
-      .catch(() => {})
+      .catch(() => { })
       .finally(() => { setLoading(false); setInitialLoad(false) })
   }, [page])
 
@@ -29,7 +29,7 @@ export default function Blogs() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         {loading ? (
           <div className="grid md:grid-cols-3 gap-6">
-            {[...Array(6)].map((_,i) => <div key={i} className="bg-white rounded-xl h-72 animate-pulse border border-gray-100" />)}
+            {[...Array(6)].map((_, i) => <div key={i} className="bg-white rounded-xl h-72 animate-pulse border border-gray-100" />)}
           </div>
         ) : blogs.length > 0 ? (
           <div className="grid md:grid-cols-3 gap-6">
@@ -43,7 +43,7 @@ export default function Blogs() {
                 )}
                 <div className="p-5 flex flex-col flex-1">
                   <div className="flex flex-wrap gap-1 mb-3">
-                    {b.tags?.slice(0,2).map(t => (
+                    {b.tags?.slice(0, 2).map(t => (
                       <span key={t} className="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded">{t}</span>
                     ))}
                   </div>
@@ -63,6 +63,24 @@ export default function Blogs() {
             <p>No blog posts yet. Check back soon!</p>
           </div>
         )}
+        {/* Educational News Section */}
+        <div className="mt-16">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div className="p-4 border-b">
+              <h2 className="text-2xl font-bold text-gray-800">
+                Educational News
+              </h2>
+            </div>
+
+            <iframe
+              src="https://www.education.gov.in/"
+              title="Educational News"
+              width="100%"
+              height="600"
+              style={{ border: "none" }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   )
