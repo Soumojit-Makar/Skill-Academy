@@ -67,7 +67,8 @@ import TechMahindra from "../../assates/tech-mahindra.png";
 import Wipro from "../../assates/Wipro-logo.png";
 import TSSI from "../../assates/TSSi.png";
 import UTKARSHA_BANGLA from "../../assates/utkarsha-bangla.png";
-
+import TELECOM_SECTOR_SKILL_COUNCIL from "../../assates/telecom-sector-skill-council.png";
+import MESC from "../../assates/mesc.png"
 
 const BENEFITS = [
   {
@@ -196,6 +197,12 @@ const HERO_IMAGES = [
   },
 ];
 const ORG_IMAGES = [
+  {
+    image: TELECOM_SECTOR_SKILL_COUNCIL,
+  },
+  {
+    image: MESC,
+  },
   {
     image: Assocham,
   },
